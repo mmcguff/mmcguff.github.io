@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<!-- saved from url=(0092)https://byui.brightspace.com/content/enforced/195543-Online.2017.Winter.CS213.02/week03.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Week 03 : CSS</title>
+	<meta charset="UTF-8&quot;">
+	
+<style> /* #1 */
+   body{
+      background-color:#5FCF80 ;
+      color:white;
+  }
+  #title{
+      position:absolute;
+      top:100px;
+      right:30px;
+        height: 150px;
+        width: 300px;
+        margin: 10px;
+      padding: 50px;
+        border: 1px solid black;
+        background-color: red;
+        transform: rotate(15deg);
+        border-radius:50px;
+
+    /* animation stuff */
+    -webkit-animation-name: title1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: title1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* animation stuff */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes title1 {
+    0%   {background-color:red; right: 30px ; top:100px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;}  /*starting position*/
+    25%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    50%  {background-color:red; right: 700px; top:600px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;}  /*left position*/
+    75%  {background-color:green; right: 700px; top:100px;}  /*up position*/
+    100% {background-color:red; right: 30px ; top:100px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;}  /*right position*/
+}
+
+/* animation stuff */
+@keyframes title1 {
+    0%   {background-color:red; right: 30px ; top:100px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;font-size:80%;}  /*starting position*/
+    25%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    50%  {background-color:red; right: 700px; top:600px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;}  /*left position*/
+    75%  {background-color:green; right: 700px ; top:100px;}  /*up position*/
+    100% {background-color:red; right: 30px ; top:100px;font-family: "Arial Black", "Arial Bold", Gadget, sans-serif;font-size:100%;}  /*right position*/
+}
+
+  #sidebar{
+      position:absolute;
+      bottom:-100px;
+      right:16px;
+        height: 200px;
+        width: 400px;
+        margin: 10px;
+      padding: 50px;
+        border: 1px solid black;
+        background-color: green;
+        transform: rotate(-15deg);
+        border-radius:50px;
+
+     /* animation stuff */
+    -webkit-animation-name: sidebar1; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: sidebar1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* animation stuff */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes sidebar1 {
+    0%   {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    25%  {background-color:mediumpurple; right: 700px; top:600px;font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;font-size:120%;}  /*left position*/
+    50%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+    75%  {background-color:mediumpurple; right: 30px ; top:100px;font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;}  /*right position*/
+    100% {background-color:green; right: 30px ; top:600px;}  /*down position*/
+}
+
+/* animation stuff */
+@keyframes sidebar1 {
+    0%   {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    25%  {background-color:mediumpurple; right: 700px; top:600px;font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;font-size:120%;}  /*left position*/
+    50%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+    75%  {background-color:mediumpurple; right: 30px ; top:100px;font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif;}  /*right position*/
+    100% {background-color:green; right: 30px ; top:600px;}  /*down position*/
+}
+
+  #menuBar{
+      position:absolute;
+      top:600px;
+      right:30px;
+        height: 120px;
+        width: 200px;
+        margin: 10px;
+      padding: 50px;
+        border: 1px solid black;
+        background-color: green;
+        transform: rotate(15deg);
+        border-radius:50px;
+
+    /* animation stuff */
+    -webkit-animation-name: mb; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: mb;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* animation stuff */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mb {
+    0%   {background-color:blue; right: 700px; top:600px;}  /*left position*/
+    25%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+    50%  {background-color:blue; right: 30px ; top:100px;}  /*right position*/
+    75%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    100% {background-color:blue; right: 700px; top:600px;}  /*left position*/
+}
+
+/* animation stuff */
+@keyframes mb {
+    0%   {background-color:blue; right: 700px; top:600px;}  /*left position*/
+    25%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+    50%  {background-color:blue; right: 30px ; top:100px;}  /*right position*/
+    75%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    100% {background-color:blue; right: 700px; top:600px;}  /*left position*/
+}
+
+  #text{
+      position:absolute;
+      top:100px;
+      right:700px;
+        height: 320px;
+        width: 400px;
+        margin: 10px;
+      padding: 50px;
+        border: 1px solid black;
+        background-color: green;
+        transform: rotate(-15deg);
+        border-radius:50px;
+
+            /* animation stuff */
+    -webkit-animation-name: txt; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: txt;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+/* animation stuff */
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes txt {
+    0%    {background-color:green; right: 700px ; top:100px;} /*up position*/
+    25%  {background-color:green; right: 30px ; top:100px;}  /*right position*/
+    50%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    75%  {background-color:green; right: 700px; top:600px;}  /*left position*/
+    100%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+}
+
+/* animation stuff */
+@keyframes txt {
+    0%    {background-color:green; right: 700px ; top:100px;} /*up position*/
+    25%  {background-color:green; right: 30px ; top:100px;}  /*right position*/
+    50%  {background-color:green; right: 30px ; top:600px;}  /*down position*/
+    75%  {background-color:green; right: 700px; top:600px;}  /*left position*/
+    100%  {background-color:green; right: 700px ; top:100px;} /*up position*/
+}
+
+ #bottom{
+      position:absolute;
+      top:400px;
+      right:500px;
+        height: 100px;
+        width: 50px;
+        margin: 10px;
+      padding: 50px;
+        border: 1px solid black;
+        background-color: lightblue;
+        transform: rotate(-15deg);
+        border-radius:50px;
+        -webkit-animation: spin 4s infinite linear;
+        animation-duration: 5s;
+        animation-direction: alternate;
+ }
+
+ @-webkit-keyframes spin {
+	0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+
+ keyframes spin {
+	0%  {-webkit-transform: rotate(0deg);}
+	100% {-webkit-transform: rotate(360deg);}
+}
+
+    </style>
+  <style> /* #1 */ 
+   a
+        {
+            color: #21BEDE;
+        }
+        
+        body
+        {
+            background-color: #085DAD;
+           
+            
+        }
+        
+        h1
+        {
+           
+            background-color: #8CC739;
+            font-weight: bold;
+        }
+        
+        li
+        {
+            font-weight: bold;
+            text-align: center;
+            list-style: none;
+        }
+        
+        #title h1
+        {
+            margin-top: -10px;
+            margin-left: -10px;
+            margin-right: -10px;
+            background-color: #21BEDE;
+            height: 90px;text-align: center;
+            height: 90px;text-align: center;
+            font-size: 80px;
+        }
+        
+        p
+        {
+            color: white;
+            font-family: monospace;
+        }
+        
+        h1:hover
+        {
+                        
+            transform: rotate(360deg);
+            transition: all 3s ease;
+        }
+        
+        @media screen and (max-width: 500px) {
+            #title h1
+            {
+            
+                font-size: 60px;
+           
+            }
+            
+            p{
+                 font-family: serif;
+            }
+        }
+   </style> 
+
+  <style> /* #2 */
+     body {
+         padding-top: 90px;
+          text-align: right;
+          background-color: lightblue;
+          color: blue;
+          font-family: Verdana, Geneva, sans-serif;
+          width: 600px;
+          margin-left: 300px;
+         }
+      ul {
+          float: right;
+      }
+      #menuBar {
+         position: absolute;
+          top: 0;
+          margin: 10px;
+          padding: 2px;
+          background-color: white;
+          color: blue;    
+          overflow: hidden; 
+      }
+      #menuBarList{
+          padding: 1em;
+      }
+      .menuBarItem{
+          display: inline-block;
+          color: blue;
+          text-align: center;
+          padding: 5px;
+      }
+      li:hover {
+          background-color: black;
+          color: white;
+          transition: background-color 2s;
+      }
+      a {
+          color: black;
+      }
+      a:hover{
+         background-color: white;
+         transition: .5s;
+      }
+      h1 {
+          text-transform: capitalize;
+          text-decoration: line-through;
+          font-size: 6;
+          text-shadow: 3px 2px 5px white;
+      }
+      h1:hover {
+          text-decoration: none;
+          transition: 5s;
+      }
+  
+  
+   </style> 
+  <style> /* #3 */ 
+  body {
+    text-align: center;
+    background-color: black;
+    color: orange;
+    font-family: "Cooper Black", Calibri, sans-serif;
+}
+ul {
+    float: right;
+}
+#menuBar {
+    top: 0;
+    list-style-type: none;
+    margin: 20px;
+    padding: 70px;
+    background-color: orangered;
+    color: orangered;    
+    overflow: hidden; 
+}
+#menuBarList{
+    list-style-type: circle;
+    padding-left: 4em;
+    padding-right: 4em;
+}
+.menuBarItem{
+    display: inline-block;
+    color: black;
+    text-align: right;
+    padding: 20px 20px;
+}
+li:hover {
+    background-color: black;
+    color: white;
+}
+a {
+    color: orangered;
+}
+img{
+    display: none;
+}
+h1 {
+    text-transform: capitalize;
+    text-decoration: underline;
+    font-size: 6;
+    text-shadow: 3px 2px orangered
+}
+  
+  </style> 
+	
+<script type="text/javascript" src="./Week 03 _ CSS_files/MathML.js.download"></script><script type="text/javascript">document.addEventListener('DOMContentLoaded', function() { D2LMathML.DesktopInit('https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=MML_HTMLorMML','https://s.brightspace.com/lib/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML%2cSafe'); });</script><script type="text/javascript">function lti_launch( vars ) { var query = ''; for(var key in vars) { if(query.length == 0) { query += '?' + key + '=' + encodeURIComponent(vars[key]); } else { query += '&' + key + '=' + encodeURIComponent(vars[key]); } } location.replace( '/d2l/customization/pearsonlti/6606/Launch' + query ); }</script></head>
+<body>
+      <div class="document">
+        <div id="title">
+          <h1>Week 03 : CSS</h1>
+          <p>This page will demonstrate how to switch between different CSS stylesheets to achieve a given effect</p>
+        </div> <!--title -->
+        <div class="content">
+          <div id="menuBar">
+            <ul id="menuBarList">
+              <li class="menuBarItem" onclick="applyStyle(0)">Stylesheet 1</li>
+              <li class="menuBarItem" onclick="applyStyle(1)">Stylesheet 2</li>
+              <li class="menuBarItem" onclick="applyStyle(2)">Stylesheet 3</li>
+              <li class="menuBarItem" onclick="applyStyle(3)">Stylesheet 4</li>
+              <li class="menuBarItem" onclick="disableStyles()">No Stylesheet</li>
+            </ul>
+          </div> <!-- menuBar -->
+          <div id="text">
+            <h1>Select the Stylesheet</h1>
+            <p>There are four stylesheets that you may select from. Each one will change the coloring, fonts, 
+            		and even the layout of the page.You can change the layout of this page by selecting different 
+                    stylesheets in the menu, or by selecting one of the following links:<br>
+              <a href="C:\Users\matth_000\Documents\school\cs213\week03\Week 03 _ CSS.html#" onclick="applyStyle(0)">Stylesheet 1</a>,
+              <a href="C:\Users\matth_000\Documents\school\cs213\week03\Week 03 _ CSS.html#" onclick="applyStyle(1)">Stylesheet 2</a>,
+              <a href="C:\Users\matth_000\Documents\school\cs213\week03\Week 03 _ CSS.html#" onclick="applyStyle(2)">Stylesheet 3</a>,
+              <a href="C:\Users\matth_000\Documents\school\cs213\week03\Week 03 _ CSS.html#" onclick="applyStyle(3)">Stylesheet 4</a>.
+            </p>
+             <h1>Instructions</h1>
+            <p>Please modify this page to include a description of each stylesheet, including anything clever that 
+            		you did to achieve a given effect. Please also include the contributors to a given stylesheet.</p>
+         </div> <!-- text -->
+         <div id="sidebar">
+           <h3>Grading</h3>
+            <p>In order to get full credit for this assignment, you will need to demonstrate what you have learned 
+            		and how you helped your classmates. This means your contribution needs to be briefly described 
+                    on the page.</p>
+          </div> <!--sidebar -->
+        </div> <!-- content -->
+        <div id="bottom">Submit this assignment by </div>
+      </div> <!-- document -->
+      
+      <script>
+	    <!-- DISABLE STYLES: This function turns off the four stylesheets -->
+	    function disableStyles() 
+		{
+		  document.styleSheets[0].disabled = true;
+		  document.styleSheets[1].disabled = true;
+		  document.styleSheets[2].disabled = true;
+		  document.styleSheets[3].disabled = true;
+		}
+		<!-- APPLY STYLES: This function turns off all four stylesheets, then turns one back on -->
+		function applyStyle(i)
+		{
+			disableStyles();
+			document.styleSheets[i].disabled = false;
+		}
+	  </script>
+
+</body></html>

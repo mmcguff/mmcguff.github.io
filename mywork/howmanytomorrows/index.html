@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC-//W3C//DTD XHTML 1.0 Strict//EN
+http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd>
+<html xmlns=
+http://www.w3.org/1999/xhtml
+ xml:lang=
+en
+ lang=
+en
+>
+<head>
+<title>How many Tomorrows</title>
+
+</head>
+<body>
+<h1>How Many Tomorrows till your favorite day </h1>
+
+<h2 style="color: green"><blockquote> Whatever you want to do, Do it.  There's only so many Tomorrows.</blockquote></h2>
+
+
+<select name="lst_MonthDrop" style="background-color:#4CAF50; 
+color:#FFF; border:none;   border-radius:5px;" onchange="howManyTomorrows(this)">
+    <option> What is your favorite day of the week?</option>
+    <option value="1">Monday</option>
+    <option value="2">Tuesday</option>  
+    <option value="3">Wednesday</option>
+    <option value="4">Thursday</option>
+    <option value="5">Friday</option>
+    <option value="6">Saturday</option>
+    <option value="0">Sunday</option>  
+</select>
+
+
+<p id="ans"></p>
+
+
+
+<script>
+
+function howManyTomorrows(d){
+    var favDay = d.value;
+    var d = new Date();
+    var numDays = favDay - d.getDay();
+
+    if (numDays == 0) {
+        document.getElementById("ans").innerHTML = 
+        "Your Favorite day is today";
+    }
+
+    if (numDays < 0){
+        numDays = numDays + 7;
+        document.getElementById("ans").innerHTML = 
+        "Your Favorite day is " + numDays + " days away";
+    }
+
+    if (numDays > 0){ 
+    document.getElementById("ans").innerHTML = "Your favorite day is " + numDays + " days away.";
+    }
+}
+
+</script>
+
+
+
+
+
+</body>
+<html>
