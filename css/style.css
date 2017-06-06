@@ -1,0 +1,17 @@
+.logo{
+    background-image: url('hero_taxcoordinatedportfolio.jpg');
+    
+}
+
+.logo_title{
+    color: black;
+    font-weight: 800%;
+}
+
+.logo_menu{
+    opacity: 0.7;
+}
+
+body{
+    background-color: black;
+}
