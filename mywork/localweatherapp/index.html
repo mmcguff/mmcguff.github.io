@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>McGuff's Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="javascript.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body onload="getLocation()">
+    <h1>McGuff's Weather App</h1>
+
+    <div class="contianer">
+
+        <table class="well well-lg">
+            <tr>
+                <td colspan="4">
+                    <div id="fcc_weather_icon"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fcc_location_label"></div>
+                </td>
+                <td>
+                    <div id="fcc_location"></div>
+                </td>
+                <td>
+                    <div id="fcc_temp_label"></div>
+                </td>
+                <td>
+                    <div id="fcc_temp"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fcc_time_label"></div>
+                </td>
+                <td>
+                    <div id="time"></div>
+                </td>
+                <td>
+                    <div id="fcc_humidity_label"></div>
+                </td>
+                <td>
+                    <div id="fcc_humidity"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="fcc_description_label"></div>
+                </td>
+                <td>
+                    <div id="fcc_description"></div>
+                </td>
+                <td>
+                    <div id="fcc_wind_speed_label"></div>
+                    <!--<div id="fcc_wind_direction">NE</div>-->
+                </td>
+                <td>
+                    <div id="fcc_wind_speed"></div>
+                </td>
+            </tr>
+        </table>
+        <button id="getWeather" onclick="getLocation()">Refresh</button>
+    </div>
+    <div id="msg"></div>
+</body>
+
+</html>
