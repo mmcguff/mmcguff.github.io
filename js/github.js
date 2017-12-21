@@ -10,8 +10,8 @@ function getGit() {
                 
                 //this sorts all the github repos by latest first
                 obj.sort(function(a,b){
-                    var c = new Date(a.updated_at);
-                    var d = new Date(b.updated_at); 
+                    var c = new Date(a.pushed_at);
+                    var d = new Date(b.pushed_at); 
                     return d-c;
                 });
     
@@ -49,7 +49,7 @@ function getGit() {
                     var language = obj[i].language || "";
                     
     
-                    var updated_at = convertDate(obj[i].updated_at);
+                    var pushed_at = convertDate(obj[i].pushed_at);//using a different element that appears to be more accurate as to the last update.
     
     
                     //only returning repos that I want the public to see
@@ -71,7 +71,7 @@ function getGit() {
                 +      "<a href='"+obj[i].html_url+"'target='_blank'><b>"+obj[i].name+"</b></a>"
                 +    "</h5>"
                 +    "<h6 class='w3-text-blue'>"
-                +    "<i class='fa fa-calendar fa-fw w3-margin-right'></i>"+updated_at
+                +    "<i class='fa fa-calendar fa-fw w3-margin-right'></i>"+pushed_at
                 // +    "<span class='w3-tag w3-red w3-round'>New</span>"
                 +    "</h6>"
                 +    "<p>"+description+"</p>"
