@@ -39,7 +39,7 @@ marquee {
 
 
 
-<body  onload="getGit()" class="w3-light-grey">
+<body  onload="getGit(); $('#quote-carousel').carousel();" class="w3-light-grey">
   <!-- <marquee><i>"A smart, team player who gets things done. Everything you need in one package."</i></marquee> -->
 
   <!-- Page Container -->
@@ -474,6 +474,8 @@ marquee {
       badgesAmount: 8,
       tooltips: true
     });
+
+  
  
     $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip(); 
