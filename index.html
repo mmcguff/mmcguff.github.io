@@ -82,29 +82,48 @@ marquee {
               <b>
                 <i class="fa fa-cogs fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Skills</b>
             </p>
+            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes HTML5 CSS, CSS animations, XML, JSON and the many other markeup related technologies.">
             <p>
-              <i class="fa fa-html5 fa-fw w3-margin-right w3-large w3-text-blue"></i>HTML5</p>
+              <i class="fa fa-html5 fa-fw w3-margin-right w3-large w3-text-blue"></i>Markup Languages</p>
             <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:87%">87%</div>
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:63%">5 years</div>
             </div>
+          </a>
+          </br>
+          <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes POJO(plain old JavaScript), JQuery, AJAX, Node.js, socket.io and many other npm packages.">
             <p>
               <i class="fa fa-code w3-margin-right w3-large w3-text-blue"></i>JavaScript</p>
             <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:80%">
-                <div class="w3-center w3-text-white">80%</div>
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:63%">
+                <div class="w3-center w3-text-white">5 years</div>
               </div>
             </div>
+          </a>
+          </br>
+          <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes Mircosoft SQL, Oracle SQL, My SQL and some level of noSQL DBs like mongoDB.">
             <p>
-              <i class="fa fa-database w3-margin-right w3-large w3-text-blue"></i>Microsoft SQL</p>
+              <i class="fa fa-database w3-margin-right w3-large w3-text-blue"></i>SQL</p>
             <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:90%">90%</div>
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:40%">3 years</div>
             </div>
+          </a>
+          </br>
+          <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes both Java, C#, C++ and several others.">
             <p>
-              <i class="fa fa-windows w3-margin-right w3-large w3-text-blue"></i>C#</p>
+              <i class="fa fa-coffee w3-margin-right w3-large w3-text-blue"></i>Complied Languages</p>
             <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:65%">65%</div>
+              <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:40%">3 years</div>
             </div>
-            <br>
+          </a>
+        </br>
+        <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes development of cross platform andorid apps.  Unfortunately no IOS yet but looking to learn.">
+            <p>
+                <i class="fa fa-android w3-margin-right w3-large w3-text-blue"></i>Andorid Development</p>
+              <div class="w3-light-grey w3-round-xlarge w3-small">
+                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:40%">2 years</div>
+              </div>
+            </a>
+              <br>
 
             <!-- <p>English</p>
                   <div class="w3-light-grey w3-round-xlarge">
@@ -122,7 +141,7 @@ marquee {
             <hr>
             <p class="w3-large">
               <b>
-                <i class="fa fa-thumbs-up fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Testimonals</b>
+                <i class="fa fa-thumbs-up fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>References</b>
               <!-- Carousel Buttons Next/Prev -->
               <a data-slide="prev" href="#quote-carousel">
                 <i class="fa fa-angle-left fa-fw w3-margin-right w3-text-blue"></i>
@@ -311,7 +330,7 @@ marquee {
             <h6 class="w3-text-blue">
               <i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
             <ul>
-              <li>Help develop, test and launch Docutech's first mobile signing solution <a href="http://info.docutech.com/download-our-solex-eclose-solution-brief" target="_blank">Solex</a>, making the first fully digital end to end mortgage loan process a possiblity</li>
+              <li>Helped develop, test and launch Docutech's first mobile signing solution <a href="http://info.docutech.com/download-our-solex-eclose-solution-brief" target="_blank">Solex</a>, making the first fully digital end to end mortgage loan process a possiblity</li>
               <li>Integrated T-SQL and XPath to map data points following the MISMO Standards.</li>
               <li>Participated and took ownership in the software development process</li>
             </ul>
@@ -455,7 +474,10 @@ marquee {
       badgesAmount: 8,
       tooltips: true
     });
-
+ 
+    $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip(); 
+});
 
   </script>
 </body>
