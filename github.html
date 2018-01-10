@@ -31,8 +31,6 @@
     <script>
     
     function getGit() {
-
-
     var url = 'https://api.github.com/users/mmcguff/repos';
     console.log(url);
     var xmlhttp = new XMLHttpRequest();
@@ -49,30 +47,6 @@
 
             console.log(obj);
 
-            //this snippet returns all the projects.  
-            // obj.forEach(function(i) {
-
-            //     //this works as a coalesce.  If null then it will automatically take the other value.  Kind of cool. 
-            //     var homepage = i.homepage || "";
-            //     var description = i.description || "";
-            //     var language = i.language || "";
-                
-
-            //     var updated_at = convertDate(i.updated_at);
-
-
-            //     //only returning repos that I want the public to see
-            //     if(i.private = 'false' && i <= 2)
-            //     {
-            //         $('#target').append('<b>'+i.name+'</b><br />' 
-            //         + '<a href='+i.html_url+' target="_blank">'+i.html_url+'</a><br />' 
-            //         + '<a href='+i.homepage+' target="_blank">'+homepage+'</a><br />' 
-            //         + '<p>'+updated_at+'</p><br />'
-            //         + '<p>'+description+'</p><br />'
-            //         + '<p>'+language+'</p><hr><br />')
-            //     }
-           // })
-
             for(var i = 0; i < 3; i++)
             {
                 //this works as a coalesce.  If null then it will automatically take the other value.  Kind of cool. 
@@ -83,17 +57,6 @@
 
                 var updated_at = convertDate(obj[i].updated_at);
 
-
-                //only returning repos that I want the public to see
-                // if(obj[i].private = 'false')
-                // {
-                //     $('#target').append('<b>'+obj[i].name+'</b><br />' 
-                //     + '<a href='+obj[i].html_url+' target="_blank">'+obj[i].html_url+'</a><br />' 
-                //     + '<a href='+homepage+' target="_blank">'+homepage+'</a><br />' 
-                //     + '<p>'+updated_at+'</p><br />'
-                //     + '<p>'+description+'</p><br />'
-                //     + '<p>'+language+'</p><hr><br />')
-                // }
         if(obj[i].private = 'false')
         {
         $('#target').append(
@@ -114,12 +77,6 @@
             +  "</div>"
             +  "</div>")
           }
-
-                
-
-
-
-
             }
         }
     };
@@ -135,15 +92,5 @@
         return n;
     }
 
-
-
-
-
-
-
     </script>
-
-
-
-
 </html>
