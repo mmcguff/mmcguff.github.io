@@ -24,27 +24,44 @@
   </div>
   <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
   <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Free Consultation</a>
-   
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red" title="Search"><i class="fa fa-search"></i></a>
  </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
     <a href="#work" class="w3-bar-item w3-button">Practice Areas</a>
-    <a href="#work" class="w3-bar-item w3-button">Work</a>
-    <a href="#work" class="w3-bar-item w3-button">Price</a>
+    <a href="#about" class="w3-bar-item w3-button">About</a>
     <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    <a href="#" class="w3-bar-item w3-button">Search</a>
   </div>
 </div>
 
+  <!-- Image header -->
+  <header class="w3-display-container w3-wide" id="home">
+    <img class="w3-image w3-opacity" src="img/consitutionFlag.jpg" alt="Williams Lae Office" style="width:100%;min-height:350px;max-height:600px;">
+    <div class="w3-display-bottomleft w3-padding-large">
+      <h1 class="w3-jumbo w3-text-black w3-hide-small"><b>Know your rights!</b></h1>
+      <h3 class="w3-text-black"><b>Your legal rights are my priority..</b></h3>
+      <h6><button class="w3-button w3-red w3-padding-large w3-large w3-hover-opacity-off" onclick="goToContact()">Free Legal Consulation</button></h6>
+    </div>
+  </header>
+
+
+
+
 <!-- Image Header -->
-<div class="w3-display-container w3-animate-opacity">
+<!-- <div class="w3-animate-opacity">
   <img src="img/consitutionFlag.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
-  <div class="w3-display-bottommiddle">  
-    <button onclick="goToContact()" class="w3-button w3-xlarge w3-red" title="Go To W3.CSS">Free Legal Consulation</button>
+  
+  <div class="w3-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
   </div>
-</div>
+
+    <div class="w3-container">  
+      <button onclick="goToContact()" class="w3-button w3-xlarge w3-red" title="Go To W3.CSS">Free Legal Consulation</button>
+    </div>  
+  
+  </div>
+
+</div> -->
 
 <!-- Work Row -->
 <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
@@ -141,14 +158,13 @@
       </div>  
       <p><i>Please check the legal services you are looking for:</i></p>
       <input class="w3-check" type="checkbox" unchecked name="criminal">
-      <label>Criminal Law</label>
+      <label>Criminal</label>
       <input class="w3-check" type="checkbox" unchecked name="family">
-      <label>Family Law</label>
+      <label>Family</label>
       <input class="w3-check" type="checkbox" unchecked name="estate">
-      <label>Estate Law</label>
-      <input class="w3-check" type="checkbox" unchecked name="not-sure">
-      <label>Not Sure?</label>
-      <button type="submit" class="w3-button w3-right w3-theme">Send</button>
+      <label>Estate</label>
+
+      <button type="submit" class="w3-button w3-right w3-red">Send</button>
       </form>
     </div>
   </div>
