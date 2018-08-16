@@ -44,25 +44,6 @@
     </div>
   </header>
 
-
-
-
-<!-- Image Header -->
-<!-- <div class="w3-animate-opacity">
-  <img src="img/consitutionFlag.jpg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
-  
-  <div class="w3-container">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt </p>
-  </div>
-
-    <div class="w3-container">  
-      <button onclick="goToContact()" class="w3-button w3-xlarge w3-red" title="Go To W3.CSS">Free Legal Consulation</button>
-    </div>  
-  
-  </div>
-
-</div> -->
-
 <!-- Work Row -->
 <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
@@ -143,18 +124,24 @@
       <p><i class="fas fa-envelope w3-text-red w3-xlarge"></i>  williamslawoffice09@yahoo.com</p>
     </div>
     <div class="w3-col m7">
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" action="/action_page.php" target="_blank">
+      
+      <!-- Contact Form -->
+      <form class="w3-container w3-card-4 w3-padding-16 w3-white" id="myForm">
       <div class="w3-section">      
         <label>Name</label>
         <input class="w3-input" type="text" name="Name" required>
       </div>
       <div class="w3-section">      
         <label>Email</label>
-        <input class="w3-input" type="text" name="Email" required>
+        <input class="w3-input" type="email" name="Email" required>
       </div>
       <div class="w3-section">      
+        <label>Phone Number</label>
+        <input class="w3-input" type="tel" name="Phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Area code and phone number" required>
+      </div>  
+      <div class="w3-section">      
         <label>Message</label>
-        <input class="w3-input" type="text" name="Message" required>
+        <textarea class="w3-input w3-border" name="Message" style="resize:both; height: 10em;" required></textarea>
       </div>  
       <p><i>Please check the legal services you are looking for:</i></p>
       <input class="w3-check" type="checkbox" unchecked name="criminal">
@@ -163,9 +150,12 @@
       <label>Family</label>
       <input class="w3-check" type="checkbox" unchecked name="estate">
       <label>Estate</label>
+      <!-- <input class="" type="submit" value="Submit" id="Form-submit"/> -->
+      <button class="w3-button w3-right w3-red" type="submit" id="Form-submit" >Send</button>
+    </form>
 
-      <button type="submit" class="w3-button w3-right w3-red">Send</button>
-      </form>
+
+
     </div>
   </div>
 </div>
@@ -181,6 +171,8 @@
     <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 <script>
 // Script for side navigation
@@ -210,6 +202,23 @@ function openNav() {
 function goToContact(e) {
   window.location.href ="#contact";
 }
+
+// POST form data to zapier on submit
+$('#myForm').submit(function(e){
+  e.preventDefault();
+  $.ajax({
+      url:'https://hooks.zapier.com/hooks/catch/2818247/gxk9io/',
+      type:'post',
+      data:$('#myForm').serialize(),
+      success:function(){
+        // Change URL to page you would like to send the user after form is submitted
+       alert("Message Successfully sent.");
+      }
+  });
+});
+
+
+
 </script>
 
 </body>
