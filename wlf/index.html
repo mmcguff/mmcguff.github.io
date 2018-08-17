@@ -1,241 +1,296 @@
 <!DOCTYPE html>
 <html>
-<title>Williams Law Office</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="icon" href="img/favicon-balance-scale.ico">
+
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124186040-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-124186040-1');
+  </script>
+  <title>Williams Law Office</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-indigo.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="icon" href="img/favicon-balance-scale.ico">
+</head>
+
 <body id="myPage">
 
-<!-- Navbar -->
-<div class="w3-top">
- <div class="w3-bar w3-theme-d2 w3-center-align">
-  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="#" class="w3-bar-item w3-button w3-indigo"><i class="fas fa-balance-scale w3-margin-right"></i>Wayne Williams Law Office, PLLC</a>
-  <div class="w3-dropdown-hover w3-hide-small">
-    <button class="w3-button" title="Notifications">Practice Areas <i class="fa fa-caret-down"></i></button>     
-    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-      <a href="#work" class="w3-bar-item w3-button"><i class="fas fa-gavel w3-margin-right"></i>Criminal Law</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fas fa-child w3-margin-right"></i>Family Law</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fas fa-file-invoice-dollar  w3-margin-right"></i>Estate Planning</a>
+  <!-- Navbar -->
+  <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-center-align">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);"
+        onclick="openNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+      <a href="#" class="w3-bar-item w3-button w3-indigo">
+        <i class="fas fa-balance-scale w3-margin-right"></i>Wayne Williams Law Office, PLLC</a>
+      <div class="w3-dropdown-hover w3-hide-small">
+        <button class="w3-button" title="Notifications">Practice Areas
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+          <a href="#work" class="w3-bar-item w3-button">
+            <i class="fas fa-gavel w3-margin-right"></i>Criminal Law</a>
+          <a href="#work" class="w3-bar-item w3-button">
+            <i class="fas fa-child w3-margin-right"></i>Family Law</a>
+          <a href="#work" class="w3-bar-item w3-button">
+            <i class="fas fa-file-invoice-dollar  w3-margin-right"></i>Estate Planning</a>
+        </div>
+      </div>
+      <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Free Consultation</a>
+    </div>
+
+    <!-- Navbar on small screens -->
+    <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
+      <a href="#work" class="w3-bar-item w3-button">Practice Areas</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
     </div>
   </div>
-  <a href="#about" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Free Consultation</a>
- </div>
-
-  <!-- Navbar on small screens -->
-  <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium">
-    <a href="#work" class="w3-bar-item w3-button">Practice Areas</a>
-    <a href="#about" class="w3-bar-item w3-button">About</a>
-    <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-  </div>
-</div>
 
   <!-- Image header -->
   <header class="w3-display-container w3-wide" id="home">
     <img class="w3-image w3-opacity" src="img/consitutionFlag.jpg" alt="Williams Lae Office" style="width:100%;min-height:350px;max-height:600px;">
     <div class="w3-display-bottomleft w3-padding-large">
-      <h1 class="w3-jumbo w3-text-black w3-hide-small"><b>Know your rights!</b></h1>
-      <h3 class="w3-text-black"><b>Your legal rights are my priority..</b></h3>
-      <h6><button class="w3-button w3-red w3-padding-large w3-large w3-hover-opacity-off" onclick="goToContact()">Free Legal Consulation</button></h6>
+      <h1 class="w3-jumbo w3-text-black w3-hide-small">
+        <b>Know your rights!</b>
+      </h1>
+      <h3 class="w3-text-black">
+        <b>Your legal rights are my priority..</b>
+      </h3>
+      <h6>
+        <button class="w3-button w3-red w3-padding-large w3-large w3-hover-opacity-off" onclick="goToContact()">Free Legal Consulation</button>
+      </h6>
     </div>
   </header>
 
-<!-- Work Row -->
-<div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
+  <!-- Work Row -->
+  <div class="w3-row-padding w3-padding-64 w3-theme-l1" id="work">
 
-<div class="w3-quarter">
-<h2>Practice Areas</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
+    <div class="w3-quarter">
+      <h2>Practice Areas</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
 
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="img/criminal.jpeg" alt="family-law" style="width:100%">
-  <div class="w3-container">
-  <h3>Criminal Law</h3>
-  <h4>including:</h4>
-  <p>Traffic tickets</p>
-  <p>DWI</p>
-  <p>Drug related Crimes</p>
-  <p>Assault</p>
-  </div>
-  </div>
-</div>
+    <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <img src="img/criminal.jpeg" alt="family-law" style="width:100%">
+        <div class="w3-container">
+          <h3>Criminal Law</h3>
+          <h4>including:</h4>
+          <p>Traffic tickets</p>
+          <p>DWI</p>
+          <p>Drug related Crimes</p>
+          <p>Assault</p>
+        </div>
+      </div>
+    </div>
 
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="img/family_law.png" alt="criminal-law" style="width:100%">
-  <div class="w3-container">
-  <h3>Family Law</h3>
-  <h4>Including:</h4>
-  <p>Adoption</p>
-  <p>Divorce</p>
-  <p>Child Custody</p>
-  <p>DHS Cases</p>
-  </div>
-  </div>
-</div>
+    <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <img src="img/family_law.png" alt="criminal-law" style="width:100%">
+        <div class="w3-container">
+          <h3>Family Law</h3>
+          <h4>Including:</h4>
+          <p>Adoption</p>
+          <p>Divorce</p>
+          <p>Child Custody</p>
+          <p>DHS Cases</p>
+        </div>
+      </div>
+    </div>
 
-<div class="w3-quarter">
-<div class="w3-card w3-white">
-  <img src="img/estate.jpg" alt="personal-injury" style="width:100%">
-  <div class="w3-container">
-  <h3>Estate Planning</h3>
-  <h4>Including:</h4>
-  <p>Wills</p>
-  <p>Power of Attonery</p>
-  <p>Trusts</p>
-  <p>Legacy Planning</p>
-  </div>
-  </div>
-</div>
+    <div class="w3-quarter">
+      <div class="w3-card w3-white">
+        <img src="img/estate.jpg" alt="personal-injury" style="width:100%">
+        <div class="w3-container">
+          <h3>Estate Planning</h3>
+          <h4>Including:</h4>
+          <p>Wills</p>
+          <p>Power of Attonery</p>
+          <p>Trusts</p>
+          <p>Legacy Planning</p>
+        </div>
+      </div>
+    </div>
 
-</div>
+  </div>
 
-<!-- About Container -->
-<div class="w3-card-4 w3-center w3-padding-16 w3-dark-grey" id="about">
+  <!-- About Container -->
+  <div class="w3-card-4 w3-center w3-padding-16 w3-dark-grey" id="about">
     <img src="img/lawyer1.JPG" alt="Norway">
     <div class="w3-container w3-center">
       <h3>Wayne Williams</h3>
       <h5>PLLC</h5>
     </div>
     <div class="w3-panel w3-leftbar w3-sand w3-xxlarge w3-serif">
-      <p><i>"Your legal rights are my priority.."</i></p>
+      <p>
+        <i>"Your legal rights are my priority.."</i>
+      </p>
     </div>
     <div class="w3-center">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+
+  <!-- Contact Container -->
+  <div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+    <div class="w3-row">
+      <div class="w3-col m5">
+        <div class="w3-padding-16">
+          <span class="w3-xlarge w3-border-red w3-bottombar">Free Consulation</span>
         </div>
-  </div>
-
-
-<!-- Contact Container -->
-<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
-  <div class="w3-row">
-    <div class="w3-col m5">
-    <div class="w3-padding-16"><span class="w3-xlarge w3-border-red w3-bottombar">Free Consulation</span></div>
-      <h3>Available by appointment.</h3>
-      <p><i class="fa fa-map-marker w3-text-red w3-xlarge"></i> 205 N College Ave </br>Fayetteville, Arkansas 72701</p>
-      <p><i class="fa fa-phone w3-text-red w3-xlarge"></i> (479)-966-4000</p>
-      <p><i class="fas fa-envelope w3-text-red w3-xlarge"></i>  williamslawoffice09@yahoo.com</p>
-    </div>
-    <div class="w3-col m7">
-      
-      <!-- Contact Form -->
-      <form class="w3-container w3-card-4 w3-padding-16 w3-white" id="myForm">
-      <div class="w3-section">      
-        <label>Name</label>
-        <input class="w3-input" type="text" name="Name" required>
+        <h3>Available by appointment.</h3>
+        <p>
+          <i class="fa fa-map-marker w3-text-red w3-xlarge"></i> 205 N College Ave </br>Fayetteville, Arkansas 72701</p>
+        <p>
+          <i class="fa fa-phone w3-text-red w3-xlarge"></i> (479)-966-4000</p>
+        <p>
+          <i class="fas fa-envelope w3-text-red w3-xlarge"></i>  williamslawoffice09@yahoo.com</p>
       </div>
-      <div class="w3-section">      
-        <label>Email</label>
-        <input class="w3-input" type="email" name="Email" required>
+      <div class="w3-col m7">
+
+        <!-- Contact Form -->
+        <form class="w3-container w3-card-4 w3-padding-16 w3-white" id="myForm">
+          <div class="w3-section">
+            <label>Name</label>
+            <input class="w3-input" type="text" name="Name" required>
+          </div>
+          <div class="w3-section">
+            <label>Email</label>
+            <input class="w3-input" type="email" name="Email" required>
+          </div>
+          <div class="w3-section">
+            <label>Phone Number</label>
+            <input class="w3-input" type="tel" name="Phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Area code and phone number"
+              required>
+          </div>
+          <div class="w3-section">
+            <label>Message</label>
+            <textarea class="w3-input w3-border" name="Message" style="resize:both; height: 10em;" required></textarea>
+          </div>
+          <p>
+            <i>Please check the legal services you are looking for:</i>
+          </p>
+          <div class="w3-section">
+            <input class="w3-check" type="checkbox" unchecked name="criminal">
+            <label>Criminal</label>
+            <input class="w3-check" type="checkbox" unchecked name="family">
+            <label>Family</label>
+            <input class="w3-check" type="checkbox" unchecked name="estate">
+            <label>Estate</label>
+          </div>
+          </br>
+          <button class="w3-button w3-block w3-red" type="submit" id="Form-submit">Send</button>
+        </form>
       </div>
-      <div class="w3-section">      
-        <label>Phone Number</label>
-        <input class="w3-input" type="tel" name="Phone" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" title="Area code and phone number" required>
-      </div>  
-      <div class="w3-section">      
-        <label>Message</label>
-        <textarea class="w3-input w3-border" name="Message" style="resize:both; height: 10em;" required></textarea>
-      </div>  
-      <p><i>Please check the legal services you are looking for:</i></p>
-      <div class="w3-section">
-      <input class="w3-check" type="checkbox" unchecked name="criminal">
-      <label>Criminal</label>
-      <input class="w3-check" type="checkbox" unchecked name="family">
-      <label>Family</label>
-      <input class="w3-check" type="checkbox" unchecked name="estate">
-      <label>Estate</label>
-    </div>
-    </br>
-      <button class="w3-button w3-block w3-red" type="submit" id="Form-submit" >Send</button>
-    </form>
     </div>
   </div>
-</div>
 
-<!--Contact Form Success Modal-->
-<div id="id01" class="w3-modal">
-  <div class="w3-modal-content w3-animate-left w3-card-4">
-    <header class="w3-container w3-red"> 
-      <span onclick="document.getElementById('id01').style.display='none'" 
-      class="w3-button w3-display-topright">&times;</span>
-      <h2>Message Sent</h2>
-    </header>
-    <div class="w3-container">
-      <p>You should recieve a notification message in you email.</p>
-      <p>If you do not recieve this message in 10 mintues please call me directly at       <a href="tel:479-966-4000" target="_blank">
-       479-966-4000
-    </a></p>
-    <p>Look forward to speaking with you soon!</p>
+  <!--Contact Form Success Modal-->
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content w3-animate-left w3-card-4">
+      <header class="w3-container w3-red">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <h2>Message Sent</h2>
+      </header>
+      <div class="w3-container">
+        <p>You should recieve a notification message in you email.</p>
+        <p>If you do not recieve this message in 10 mintues please call me directly at
+          <a href="tel:479-966-4000" target="_blank">
+            479-966-4000
+          </a>
+        </p>
+        <p>Look forward to speaking with you soon!</p>
+      </div>
     </div>
   </div>
-</div>
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
-  <p>created by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"><i class="far fa-lightbulb"></i> Matthew McGuff</i></a></i></p>
-
-  <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
-    <span class="w3-text w3-padding w3-red w3-hide-small">Go To Top</span>   
-    <a class="w3-button w3-theme" href="#myPage"><span class="w3-xlarge">
-    <i class="fa fa-chevron-circle-up"></i></span></a>
   </div>
-</footer>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+    <p>created by
+      <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">
+        <i class="far fa-lightbulb"></i> Matthew McGuff</i>
+      </a>
+      </i>
+    </p>
 
-<script>
-// Script for side navigation
-function w3_open() {
-    var x = document.getElementById("mySidebar");
-    x.style.width = "300px";
-    x.style.paddingTop = "10%";
-    x.style.display = "block";
-}
+    <div style="position:relative;bottom:100px;z-index:1;" class="w3-tooltip w3-right">
+      <span class="w3-text w3-padding w3-red w3-hide-small">Go To Top</span>
+      <a class="w3-button w3-theme" href="#myPage">
+        <span class="w3-xlarge">
+          <i class="fa fa-chevron-circle-up"></i>
+        </span>
+      </a>
+    </div>
+  </footer>
 
-// Close side navigation
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-// Used to toggle the menu on smaller screens when clicking on the menu button
-function openNav() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
+  <script>
+    // Script for side navigation
+    function w3_open() {
+      var x = document.getElementById("mySidebar");
+      x.style.width = "300px";
+      x.style.paddingTop = "10%";
+      x.style.display = "block";
     }
-}
 
-// Navigate to Contact form from a button
-function goToContact(e) {
-  window.location.href ="#contact";
-}
+    // Close side navigation
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
 
-// POST form data to zapier on submit
-$('#myForm').submit(function(e){
-  e.preventDefault();
-  $.ajax({
-      url:'https://hooks.zapier.com/hooks/catch/2818247/gxk9io/',
-      type:'post',
-      data:$('#myForm').serialize(),
-      success:function(){
-       displaySuccessModal();
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else {
+        x.className = x.className.replace(" w3-show", "");
       }
-  });
-});
+    }
 
-// Display Success Modal
-function displaySuccessModal() {document.getElementById('id01').style.display='block';}
+    // Navigate to Contact form from a button
+    function goToContact(e) {
+      window.location.href = "#contact";
+    }
 
-</script>
+    // POST form data to zapier on submit
+    $('#myForm').submit(function (e) {
+      e.preventDefault();
+      $.ajax({
+        url: 'https://hooks.zapier.com/hooks/catch/2818247/gxk9io/',
+        type: 'post',
+        data: $('#myForm').serialize(),
+        success: function () {
+          displaySuccessModal();
+        }
+      });
+    });
+
+    // Display Success Modal
+    function displaySuccessModal() { document.getElementById('id01').style.display = 'block'; }
+
+  </script>
 
 </body>
+
 </html>
