@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Matt McGuff | Technologist</title>
+    <link rel="stylesheet" href="css/custom.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
@@ -14,15 +15,15 @@
     ></script>
   </head>
   <body>
-    <section class="hero is-primary is-medium">
+    <section class="hero is-info is-medium">
       <!-- Hero head: will stick at the top -->
       <div class="hero-head">
         <nav class="navbar">
           <div class="container">
             <div class="navbar-brand">
               <a class="navbar-item">
-                <img src="img/logo.png" alt="Logo" />
-                <h1>Matt McGuff</h1>
+                <img src="img/profile.jpg" alt="Logo" />
+                <h1>Matthew McGuff</h1>
               </a>
               <span class="navbar-burger burger" data-target="navbarMenuHeroA">
                 <span></span>
@@ -32,14 +33,17 @@
             </div>
             <div id="navbarMenuHeroA" class="navbar-menu">
               <div class="navbar-end">
-                <a class="navbar-item is-active">
-                  Home
+                <a class="navbar-item is-active" href="#about">
+                  About
                 </a>
-                <a class="navbar-item">
-                  Examples
+                <a class="navbar-item" href="#portfolio">
+                  Portfolio
                 </a>
-                <a class="navbar-item">
-                  Documentation
+                <a class="navbar-item" href="#testimonals">
+                  Testimonals
+                </a>
+                <a class="navbar-item" href="#contact">
+                        Contact Me
                 </a>
                 <span class="navbar-item"> </span>
               </div>
@@ -51,16 +55,16 @@
       <!-- Hero content: will be in the middle -->
       <div class="hero-body">
         <div class="container">
-          <h1 class="title">
+          <h1 id="hero-title" class="title">
             Matthew McGuff | Technologist
           </h1>
-          <h2 class="subtitle">
+          <h2 id="hero-subtitle" class="subtitle">
             <i
               >(noun) A person who uses scientific technical knowledge to solve
               practical problems.</i
             >
           </h2>
-          <a href="#contact" class="button is-primary is-inverted">
+          <a href="#contact" class="button is-info is-inverted">
             <span class="icon">
               <i class="fas fa-hands-helping"></i>
             </span>
@@ -86,7 +90,7 @@
       <section class="section">
             <div class="container">
               <div class="heading">
-                <h1 id="about" class="title">Portfolio</h1>
+                <h1 id="portfolio" class="title">Portfolio</h1>
                 <h2 class="subtitle">
                   A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
                 </h2>
@@ -97,7 +101,7 @@
           <section class="section">
                 <div class="container">
                   <div class="heading">
-                    <h1 id="about" class="title">Testimonals</h1>
+                    <h1 id="testimonals" class="title">Testimonals</h1>
                     <h2 class="subtitle">
                       A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading
                     </h2>
