@@ -1,482 +1,466 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js">
-<!--<![endif]-->
+<html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Matthew McGuff | Software Engineer</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Source+Code+Pro'>
-  <link rel="stylesheet" href="js/reportcard/css/bootstrap.min.css">
-  <link rel="stylesheet" href="js/reportcard/css/bootstrap-responsive.min.css">
-  <link rel="stylesheet" href="js/reportcard/css/badges.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matthew McGuff | Technologist</title>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css" />
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
-<style>
-  body {
-    background-image: url("img/b1.jpg");
-  }
 
-  marquee {
-    color: white;
-
-  }
-</style>
-
-<body onload="getGit(); $('#quote-carousel').carousel();" class="w3-light-grey">
-
-  <!-- Page Container -->
-  <div class="w3-content w3-margin-top" style="max-width:1400px;">
-
-    <!-- The Grid -->
-    <div class="w3-row-padding">
-
-      <!-- Left Column -->
-      <div class="w3-third">
-
-        <div class="w3-white w3-text-grey w3-card-4">
-          <div class="w3-display-container">
-            <img src="https://s.gravatar.com/avatar/9c205004a91ceb0a34d2111dbfadcded?s=80" alt="Avatar">
-            <div class="w3-display-topright w3-container w3-text-blue">
-              <h2>Matthew McGuff</h2>
+<body>
+  <section class="hero hero-image is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item">
+              <h1>Matthew McGuff</h1>
+            </a>
+            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active" href="#about">
+                About
+              </a>
+              <a class="navbar-item" href="#portfolio">
+                Portfolio
+              </a>
+              <a class="navbar-item" href="#testimonals">
+                Testimonals
+              </a>
+              <a class="navbar-item" href="#contact">
+                Contact Me
+              </a>
+              <span class="navbar-item"> </span>
             </div>
           </div>
-          <hr>
-          <div class="w3-container">
-            <p>
-              <i class="fa fa-laptop fa-fw w3-margin-right w3-large w3-text-blue"></i>Software Engineer</p>
-            <p>
-              <i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-blue"></i>Praire Grove, Arkansas</p>
-            <p>
-              <a href="mailto:matthewmcguff85@gmail.com" target="_blank">
-                <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-blue"></i>matthewmcguff85@gmail.com</a>
-            </p>
-            <p>
-              <a href="https://linkedin.com/in/matthewmcguff" target="_blank">
-                <i class="fa fa-linkedin fa-fw w3-margin-right w3-large w3-text-blue"></i>https://www.linkedin.com/in/matthewmcguff/</a>
-            </p>
-            <p>
-              <a href="tel:208-970-9341" target="_blank">
-                <i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-blue"></i>208-970-9341</a>
-            </p>
-            <hr>
-            <p class="w3-large w3-text-theme">
-              <b>
-                <i class="fa fa-globe fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Team Treehouse</b>
-            </p>
-            <div class="report-card treehouse"></div>
-            <a href="https://teamtreehouse.com/matthewmcguff" target="newWindow">...more about me on treehouse</a>
-            <hr>
-            <p class="w3-large">
-              <b>
-                <i class="fa fa-cogs fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Skills</b>
-            </p>
-            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes HTML5 CSS, CSS animations, XML, JSON and the many other markeup related technologies.">
-              <p>
-                <i class="fa fa-html5 fa-fw w3-margin-right w3-large w3-text-blue"></i>Markup Languages</p>
-              <div class="w3-light-grey w3-round-xlarge w3-small">
-                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:63%">5 years</div>
-              </div>
-            </a>
-            </br>
-            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes POJO(plain old JavaScript), JQuery, AJAX, Node.js, socket.io and many other npm packages.">
-              <p>
-                <i class="fa fa-code w3-margin-right w3-large w3-text-blue"></i>JavaScript</p>
-              <div class="w3-light-grey w3-round-xlarge w3-small">
-                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:63%">
-                  <div class="w3-center w3-text-white">5 years</div>
-                </div>
-              </div>
-            </a>
-            </br>
-            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes both Java, C#, C++ and several others.">
-              <p>
-                <i class="fa fa-coffee w3-margin-right w3-large w3-text-blue"></i>Compiled Languages</p>
-              <div class="w3-light-grey w3-round-xlarge w3-small">
-                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:40%">3 years</div>
-              </div>
-            </a>
-            </br>
-            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes Mircosoft SQL, Oracle SQL, My SQL and some level of noSQL DBs like mongoDB.">
-              <p>
-                <i class="fa fa-database w3-margin-right w3-large w3-text-blue"></i>SQL</p>
-              <div class="w3-light-grey w3-round-xlarge w3-small">
-                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:40%">3 years</div>
-              </div>
-            </a>
-            </br>
-            <a href="#" data-toggle="tooltip" data-placement="left" Title="Includes development of cross platform andorid apps.  Unfortunately no IOS yet but looking to learn.">
-              <p>
-                <i class="fa fa-android w3-margin-right w3-large w3-text-blue"></i>Android Development</p>
-              <div class="w3-light-grey w3-round-xlarge w3-small">
-                <div class="w3-container w3-center w3-round-xlarge w3-blue" style="width:27%">2 years</div>
-              </div>
-            </a>
-            <br>
-
-            <hr>
-            <p class="w3-large">
-              <b>
-                <i class="fa fa-thumbs-up fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>References</b>
-              <!-- Carousel Buttons Next/Prev -->
-              <a data-slide="prev" href="#quote-carousel">
-                <i class="fa fa-angle-left fa-fw w3-margin-right w3-text-blue"></i>
-              </a>
-              <a data-slide="next" href="#quote-carousel">
-                <i class="fa fa-angle-right fa-fw w3-margin-right w3-text-blue"></i>
-              </a>
-            </p>
-
-            <div>
-              <div>
-                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                  <!-- Bottom Carousel Indicators -->
-                  <ol class="carousel-indicators">
-                    <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#quote-carousel" data-slide-to="1"></li>
-                    <li data-target="#quote-carousel" data-slide-to="2"></li>
-                  </ol>
-
-                  <!-- Carousel Slides / Quotes -->
-                  <div class="carousel-inner">
-
-                    <!-- Quote 1 -->
-                    <div class="item active">
-                      <blockquote>
-                        <div>
-                          <div>
-                            <p>"Matthew loves providing solutions for any work problem and is dedicated in being an incredible
-                              software developer! He works hard and loves challenges and learns and grasps concepts quickly!
-                              Matthew is a pleasure to be around and is a great team member for providing ideas, listening,
-                              and contributing to a positive and friendly work environment. Matthew is kind, intelligent
-                              and all around awesome!"</p>
-                            <small>Reuben Ellis</small>
-                            <img class="img-circle" src="img/rueben_ellis.jpg" style="width: 75px;height:75px;">
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <div class="item">
-                      <blockquote>
-                        <div>
-                          <div>
-                            <p>"Matthew is a gifted individual with lots of talents and skills. Not only is he smart, especially
-                              at what he does, but also very flexible and easy to work with. He has helped me numerous times
-                              by not only figuring out the problem but also going through each step with me to make sure
-                              I understood the whole process. He will be a valuable employee to any supervisors and companies.
-                              If you have an opportunity to hire this guy, do not pass it up. He'll give twice as much as
-                              what you ask for."</p>
-                            <small>DJ Lim</small>
-                            <img class="img-circle" src="img/dougjim lim.jpg" style="width: 75px;height:75px;">
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <div class="item">
-                      <blockquote>
-                        <div>
-                          <div>
-                            <p>"Matthew is a dedicated worker. He gives his all in every effort. He seeks to understand, grow,
-                              and improve each day. He is willing to listen and try new suggestions, even if those suggestions
-                              are outside his comfort zone. He is a team player that not only listens to others, but helps
-                              share his knowledge. I enjoyed working with Matthew and seeing him increase his abilities."</p>
-                            <small>Joshua Barrow</small>
-                            <img class="img-circle" src="img/josh barrow.jpg" style="width: 75px;height:75px;">
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-                    <div class="item">
-                      <blockquote>
-                        <div>
-                          <div>
-                            <p>"I worked closely with Matt for nearly a year. In that time, I found him to be extremely knowledgeable, teachable on the rare occasion he didn't know the answer, driven to succeed, and rare in this day and age: honest. His coding skills are exemplary, and he always seeks out and implements the BEST solution, even when it may not be the easiest.
-                              
-                              If I was an employer, I would eagerly hire Matt, and consider him a strong asset to my team."</p>
-                            <small>Buck Hedges</small>
-                            <img class="img-circle" src="img/buck.jpg" style="width: 75px;height:75px;">
-                          </div>
-                        </div>
-                      </blockquote>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr>
-          </div>
-
         </div>
+      </nav>
+    </div>
 
-        <!-- End Left Column -->
-
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container">
+        <h1 id="hero-title" class="title">
+          Matthew McGuff | Technologist
+        </h1>
+        <h2 id="hero-subtitle" class="subtitle">
+          <i>(noun) A person who uses scientific technical knowledge to solve
+            practical problems.</i>
+        </h2>
+        <a href="#contact" class="button is-info is-inverted">
+          <span class="icon">
+            <i class="fas fa-hands-helping"></i>
+          </span>
+          <span>Contact Me</span>
+        </a>
       </div>
+    </div>
+  </section>
+  </hr>
 
-      <!-- Right Column -->
-      <div class='w3-twothird'>
-        <div class='w3-container w3-card w3-white w3-margin-bottom'>
-          <h2 class='w3-text-grey w3-padding-16'>
-            <a href='https://github.com/mmcguff?tab=repositories' target='_blank'>
-              <i class='fa fa-github fa-fw w3-margin-right w3-xxlarge w3-text-blue'></i>Projects on Github</h2>
-          </a>
-          <div id="target"></div>
+  <section class="section">
+    <div class="container">
+      <div class="heading">
+        <h1 id="about" class="title">About</h1>
+      </div>
+      <hr>
+      <div class="container">
+        <article class="media">
+          <figure class="media-left">
+            <p class="image is-128x128">
+              <img class="is-rounded" src="img/profile.jpg">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
 
-          <a href='https://github.com/mmcguff?tab=repositories' target='blank'>show more</a>
-        </div>
-
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-          <h2 class="w3-text-grey w3-padding-2">
-            <i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Work Experience</h2>
-            <div class="w3-container">
-              <h5 class="w3-opacity">
-                <a href="http://curriqunet.com/" target="_blank">
-                  <b>Programmer / Walmart Labs</b>
+              <p>
+                <strong>Matthew McGuff</strong> <small>mmcguff</small>
+                <br>
+                I am developer seeking to make the world a better place through code. I am passionate about what I do
+                and look forward to learning something new every day.
+              </p>
+            </div>
+            <nav class="level is-mobile">
+              <div class="level-right">
+                <a href="https://www.linkedin.com/in/matthewmcguff/" target="_blank" class="level-item">
+                  <span class="icon is-large"><i class="fab fa-2x fa-linkedin-in"></i></span>
                 </a>
-              </h5>
-  
-              <h6 class="w3-text-blue">
-                <i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2018 -
-                <span class="w3-tag w3-blue w3-round">Current</span>
-              </h6>
-              <ul class="ts">
-                <li>Designing, implementing and maintaining applications to observe and predict produce quality.</li>
-                <li>Working toward implementing an Apache Kafka messaging solution in node.js for sending messages between applications.</li>
-                <li>Provide support to deployed application to internal users within Walmart.</li>
-              </ul>
-              <span class="w3-tag w3-blue w3-round">Angular</span>
-              <span class="w3-tag w3-blue w3-round">TypeScript</span>
-              <span class="w3-tag w3-blue w3-round">Babel</span>
-              <span class="w3-tag w3-blue w3-round">Node.js</span>
-              <span class="w3-tag w3-blue w3-round">Express.js</span>
-              <span class="w3-tag w3-blue w3-round">MongoDB</span>
-              <span class="w3-tag w3-blue w3-round">MySQL</span>
-              <span class="w3-tag w3-blue w3-round">MariaDB</span>
-              <span class="w3-tag w3-blue w3-round">Mocha/Chai</span>
-              <span class="w3-tag w3-blue w3-round">Apache Kafka</span>
-            </div>
-            <hr>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <a href="http://curriqunet.com/" target="_blank">
-                <b>Software Developer / Curricunet</b>
-              </a>
-            </h5>
-
-            <h6 class="w3-text-blue">
-              <i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2017 - Apr 2018
-            </h6>
-            <ul class="ts">
-              <li>Worked to migrate sensitive university/college curriculum data from a legacy cold fusion, oracle SQL stack
-                to CurricuUNET Meta (a C# MVC, Microsoft SQL stack), the industry’s leading curriculum management solution.</li>
-              <li>Helped identify, resolve and prevent future technical debt incurred from past mistakes from other developers
-                before me</li>
-              <li>Became an advocate of best practices that prevented mistakes and encouraged increased efficiency and productivity.</li>
-            </ul>
-
-            <span class="w3-tag w3-blue w3-round">MSSQL</span>
-            <span class="w3-tag w3-blue w3-round">Oracle SQL</span>
-            <span class="w3-tag w3-blue w3-round">Cold Fusion</span>
-            <span class="w3-tag w3-blue w3-round">C#</span>
-            <span class="w3-tag w3-blue w3-round">ASP.Net MVC</span>
-            <span class="w3-tag w3-blue w3-round">Visual Studio</span>
-            <span class="w3-tag w3-blue w3-round">PowerShell</span>
-            <span class="w3-tag w3-blue w3-round">JIRA</span>
-            <span class="w3-tag w3-blue w3-round">Agile</span>
-            <span class="w3-tag w3-blue w3-round">Scrum</span>
+                <a href="https://github.com/mmcguff/" target="_blank" class="level-item">
+                  <span class="icon is-large"><i class="fab fa-2x fa-github"></i></span>
+                </a>
+              </div>
+            </nav>
           </div>
-          <hr>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <a href="http://www.docutech.com/" target="_blank">
-                <b>QA Anyalst / Docutech</b>
-              </a>
-            </h5>
-            <h6 class="w3-text-blue">
-              <i class="fa fa-calendar fa-fw w3-margin-right"></i>Oct 2015 - Apr 2017</h6>
-            <ul>
-              <li>Helped develop, test and launch Docutech's first mobile signing solution
-                <a href="http://info.docutech.com/download-our-solex-eclose-solution-brief"
-                  target="_blank">Solex</a>, making the first fully digital end to end mortgage loan process a possiblity</li>
-              <li>Integrated T-SQL and XPath to map data points following the MISMO(Mortgage Industry Standards Maintenance Organization)
-                Standards.</li>
-              <li>Participated and took ownership in the SDLC (Software Development Life Cycle)</li>
-            </ul>
-            <span class="w3-tag w3-blue w3-round">MSSQL</span>
-            <span class="w3-tag w3-blue w3-round">C#</span>
-            <span class="w3-tag w3-blue w3-round">XML</span>
-            <span class="w3-tag w3-blue w3-round">XPath 1.0</span>
-            <span class="w3-tag w3-blue w3-round">ASP.Net MVC</span>
-            <span class="w3-tag w3-blue w3-round">Automated Testing</span>
-            <span class="w3-tag w3-blue w3-round">Microsoft TFS</span>
-            <hr>
-          </div>
-        </div>
+        </article>
 
-        <div class="w3-container w3-card w3-white">
-          <h2 class="w3-text-grey w3-padding-16">
-            <i class="fa fa-graduation-cap fa-fw w3-margin-right w3-xxlarge w3-text-blue"></i>Education</h2>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <a href="http://www.byui.edu/computer-science-electrical-engineering" target="_blank">
-                <b>BYU-I / Bachelor of Science(BS) / CS: Software Engineering</b>
-              </a>
-            </h5>
-            <h6 class="w3-text-blue">
-              <i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2018</h6>
-            <p>Over 90% of my secondary education has been completed online while working full time. My education at BYUI introduced
-              programming best practices, design patterns, and data structures that ultimately gave me a solid foundation
-              as a software engineer.</p>
-            <span class="w3-tag w3-blue w3-round">HTML</span>
-            <span class="w3-tag w3-blue w3-round">CSS</span>
-            <span class="w3-tag w3-blue w3-round">JavaScript</span>
-            <span class="w3-tag w3-blue w3-round">Regex</span>
-            <span class="w3-tag w3-blue w3-round">C++</span>
-            <span class="w3-tag w3-blue w3-round">Java</span>
-            <span class="w3-tag w3-blue w3-round">Andorid Mobile</span>
-            <span class="w3-tag w3-blue w3-round">Node.js</span>
-            <span class="w3-tag w3-blue w3-round">NPM</span>
-            <span class="w3-tag w3-blue w3-round">PHP</span>
-            <span class="w3-tag w3-blue w3-round">Postgres SQL</span>
-            <span class="w3-tag w3-blue w3-round">Oracle SQL</span>
-            <span class="w3-tag w3-blue w3-round">Angular.js</span>
-            <span class="w3-tag w3-blue w3-round">Bower</span>
-            <span class="w3-tag w3-blue w3-round">socket.io</span>
-            <span class="w3-tag w3-blue w3-round">TypeScript</span>
-            <span class="w3-tag w3-blue w3-round">XML</span>
-            <span class="w3-tag w3-blue w3-round">JSON</span>
-            <span class="w3-tag w3-blue w3-round">XSLT</span>
-            <span class="w3-tag w3-blue w3-round">API</span>
-            <span class="w3-tag w3-blue w3-round">Agile Scrum</span>
-            <span class="w3-tag w3-blue w3-round">XP Paired Programing</span>
-            <span class="w3-tag w3-blue w3-round">Data Structures</span>
-            <hr>
-          </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <a href="http://www.phoenix.edu/" target="_blank">
-                <b>University of Phoenix / Assoicate of Arts(AA) / BUS: Business</b>
-              </a>
-            </h5>
-            <h6 class="w3-text-blue">
-              <i class="fa fa-calendar fa-fw w3-margin-right"></i>Apr 2013</h6>
-            <p>Completing my associate’s degree was foundational for teaching me the basics of business and how I can best contribute
-              to making a difference in the position I work.</p>
-            <span class="w3-tag w3-blue w3-round">Mircosoft Office</span>
-            <span class="w3-tag w3-blue w3-round">Business Adminstration</span>
-            <span class="w3-tag w3-blue w3-round">Time Management</span>
-            <span class="w3-tag w3-blue w3-round">Collaboration</span>
-            <hr>
-          </div>
-          <div class="w3-container">
-            <h5 class="w3-opacity">
-              <b>Online Coding Schools</b>
-            </h5>
-            <p>I never stop learning new technologies, best practices and basically anything else related to software development.
-              Below is sample of several of the sources I turn for expanding my knowledge of all things tech.</p>
-            <h6 class="w3-text-blue">
-              <i class="fa fa-calendar fa-fw w3-margin-right"></i>On Going</h6>
-            <ul style="list-style-type:none; margin: 0; padding: 0;">
-              <li>
-                <a href="https://www.freecodecamp.org/" target="_blank">
-                  <i class="fa fa-free-code-camp fa-fw w3-margin-right w3-text-blue"></i>FreeCodeCamp</li>
-              </a>
-              <li>
-                <a href="https://www.hackerrank.com/" target="_blank">
-                  <i class="fa fa-code fa-fw w3-margin-right w3-text-blue"></i> HackerRank</li>
-              </a>
-              <li>
-                <a href="https://teamtreehouse.com/" target="_blank">
-                  <i class="fa fa-code fa-fw w3-margin-right w3-text-blue"></i> Team Tree House</li>
-              </a>
-              <li>
-                <a href="https://www.pluralsight.com/" target="_blank">
-                  <i class="fa fa-code fa-fw w3-margin-right w3-text-blue"></i> PluralSight</li>
-              </a>
-              <li>
-                <a href="https://codefights.com/" target="_blank">
-                  <i class="fa fa-code fa-fw w3-margin-right w3-text-blue"></i> Code Fights</li>
-              </a>
-            </ul>
-            <br>
-            <span class="w3-tag w3-blue w3-round">30 Days of Code</span>
-            <span class="w3-tag w3-blue w3-round">Data Structures</span>
-            <span class="w3-tag w3-blue w3-round">Object Oriented Design</span>
-            <span class="w3-tag w3-blue w3-round">Andorid Weather App</span>
-            <span class="w3-tag w3-blue w3-round">Front End Development Certificate</span>
-            <span class="w3-tag w3-blue w3-round">Git</span>
-            <span class="w3-tag w3-blue w3-round">GitHub</span>
-            <span class="w3-tag w3-blue w3-round">Verision Control</span>
-            <span class="w3-tag w3-blue w3-round">Advanced CLI</span>
-
-            <hr>
-
-          </div>
-        </div>
-
-        <!-- End Right Column -->
       </div>
 
-      <!-- End Grid -->
+      <hr>
+
+
+      <div class="heading">
+        <h2 class="subtitle">
+          Some of the technologies I have worked with extensively include:
+        </h2>
+      </div>
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/mongodb-seeklogo.com.svg" height="124" width="124" alt='mongo'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/express-js-seeklogo.com.svg" height="124" width="124" alt='express'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/angular-seeklogo.com 2.svg" height="124" width="124" alt='angular'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/node-node-js-seeklogo.com.svg" height="124" width="124" alt='node.js'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/npm-node-package-manager.svg" height="124" width="124" alt='npm'>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/react-seeklogo.com.svg" height="124" width="124" alt='react'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/microsoft-sql-server-seeklogo.com.svg" height="124" width="124"
+              alt='microsoft-sql-server'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/microsoft-azure-seeklogo.com.svg" height="124" width="124" alt='microsoft-azure'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/google-cloud-seeklogo.com.svg" height="124" width="124" alt='google-cloud-platform'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/heroku-seeklogo.com.svg" height="80" width="124" alt='heroku'>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/wordpress-seeklogo.com.svg" height="124" width="124" alt='wordpress'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/php-seeklogo.com.svg" height="124" width="124" alt='php'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/trello-seeklogo.com.svg" height="124" width="124" alt='trello'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/jira-seeklogo.com.svg" height="124" width="124" alt='jira'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/bitbucket-seeklogo.com.svg" height="124" width="124" alt='bitbucket'>
+          </div>
+        </div>
+      </nav>
     </div>
-
-    <!-- End Page Container -->
-  </div>
-
-  <footer class="w3-container w3-blue w3-center w3-margin-top">
-    <p>Contact me anytime.</p>
-    <div class="social-links">
-      <a href="mailto:matthewmcguff85@gmail.com" target="_blank">
-        <i class="fa fa-envelope w3-text-white"></i>
-      </a>
-      <a href="tel:208-970-9341" target="_blank">
-        <i class="fa fa-phone w3-large w3-text-white"></i>
-      </a>
-      <a href="https://linkedin.com/in/matthewmcguff" target="_blank">
-        <i class="fa fa-linkedin w3-large w3-text-white"></i>
-      </a>
-      <a href="https://github.com/mmcguff" target="_blank">
-        <i class="fa fa-github w3-large w3-text-white"></i>
-      </a>
+  </section>
+  <hr>
+  <section class="section">
+    <div class="container">
+      <div class="heading">
+        <h1 id="portfolio" class="title">Portfolio</h1>
+        <div class="tile is-ancestor">
+          <div class="tile is-vertical">
+            <div class="tile">
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <div class="content">
+                    <a href="https://blog.walmart.com/innovation/20180301/eden-the-tech-thats-bringing-fresher-groceries-to-you"
+                      target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/Walmart-logo.png" alt='walmart'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://blog.walmart.com/innovation/20180301/eden-the-tech-thats-bringing-fresher-groceries-to-you"
+                        target="_blank"><b>The Muse Project</b></br></br>
+                        <img src="img/logos/eden_leaf.png" height="30" width="30" alt='bitbucket'></a></br>
+                      The Muse project(formerly known as Eden) was concieved out of the need for the Walmart Global
+                      Supply Chain to treat organic products differently than nonorganic products from a supply chain
+                      perspective.
+                      </br></br>
+                      To that end Muse represents a platforms of desktop and moblie applicagions aimed at predicting and
+                      observing produce quality.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <div class="content">
+                    <a href="https://authenticity.ai/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/authenticity.webp" alt='authenticity'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://authenticity.ai/" target="_blank"><b>Core Transcription and Translation
+                          API</b></br></br>
+                        <img src="img/logos/aLogo.svg" height="30" width="30" alt='authenticity_logo'></a></br>
+                      Authenticity.ai was founded to provide highly accurate Artificial Intelligence surveillance
+                      solutions to the Legal and Compliance industries.
+                      </br></br>
+                      Authenticity provides audio and video recognition solutions with custom trainable artificial
+                      intelligence engines for audio transcription, language translation, facial recognition and object
+                      detection.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <div class="content">
+                    <a href="https://curriqunet.com/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/curricunet.webp" alt='authenticity'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://curriqunet.com/" target="_blank">
+                        <a href="" target="_blank"><b>Curriculum Management Solutions for High Education</b></br></br>
+                          <img src="img/logos/iq.webp" height="30" width="30" alt='authenticity_logo'></a></br>
+                        Curricunet, formerly Governet provides a curriculum management solution for colleges and
+                        instiatutions of higher learning needing a simple solution for managing change within their
+                        curriculums.
+                        </br></br>
+                        The tool provides a framework which makes getting new courses and programs approved by
+                        accrediting bodies much easier and straight forward.
+                        </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <div class="content">
+                    <a href="https://docutech.com/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/Docutech Logo.png" alt='authenticity'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://docutech.com/" target="_blank">
+                        <b>ConformX and Solex Esigning solution</b></br></br>
+                        <img src="img/logos/doc_logo.svg" height="30" width="30" alt='authenticity_logo'></a></br>
+                      Docutech provides a several soltions that together faciliate the entire loan approval process
+                      electronically. Loan Service orginators can submit borrower information and get graunteed valid
+                      electronic or paper documents needed to close a loan.
+                      </br></br>
+                      ConformX(The main document generating platform) and Solex(The mobile signing solution) along with
+                      several other services provide the basis for an entirely paperless end to end mortgage solution
+                      from Initial Disclosure to post closing.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <hr>
+  <section class="section">
+    <div class="container">
+      <div class="heading">
+        <h1 id="testimonals" class="title">Testimonals</h1>
+      </div>
+      <hr>
+      <article class="media">
+          <figure class="media-left">
+              <p class="image is-64x64">
+                <img class="is-rounded" src="img/rueben_ellis.jpg">
+              </p>
+            </figure>
+          <div class="media-content">
+            <div class="content">
+              <p>
+                Matthew loves providing solutions for any work problem and is dedicated in being an incredible software developer!
+He works hard and loves challenges and learns and grasps concepts quickly!
+Matthew is a pleasure to be around and is a great team member for providing ideas, listening, and contributing to a positive and friendly work environment. Matthew is kind, intelligent and all around awesome!
+              
+</p>
+            </div>
+            <nav class="level is-mobile">
+                <div class="level-right">
+                  <a href="https://www.linkedin.com/in/reuben-ellis-15922895/" target="_blank" class="level-item">
+                    <span class="icon is-small"><i class="fab fa-linkedin-in"></i></span>
+                  </a>
+                <strong>Reuben Ellis</strong>&nbsp;|&nbsp;<small> Software Engineer&nbsp;|&nbsp; <i>Spudnik Equipment Co</i></small>               
+                </div>
+              </nav>
+          </div>
+        </article>
+        <article class="media">
+            <figure class="media-left">
+                <p class="image is-64x64">
+                  <img class="is-rounded" src="img/ethan_adams.jpeg">
+                </p>
+              </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>I worked with Matthew in a group over the semester. This group was the best group in school I had during my time their, and much of that is due to Matthew taking the lead. The first few weeks were a little hectic, but Matthew took control and got us organized. We developed a good work flow and it was always a delight to work with him. If you need a team member with good accountability and communication, Matthew is that person.</p>
+              </div>
+              <nav class="level is-mobile">
+                  <div class="level-right">
+                    <a href="https://www.linkedin.com/in/ethan-adams747/" target="_blank" class="level-item">
+                      <span class="icon is-small"><i class="fab fa-linkedin-in"></i></span>
+                    </a>
+                    <strong>Ethan Adams</strong>&nbsp;|&nbsp;<small>Software Engineer&nbsp;|&nbsp;<i>Walmart Labs</i></small>               
+                  </div>
+                </nav>
+            </div>
+          </article>
+          <article class="media">
+              <figure class="media-left">
+                  <p class="image is-64x64">
+                    <img class="is-rounded" src="img/buck.jpg">
+                  </p>
+                </figure>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    Matthew loves providing solutions for any work problem and is dedicated in being an incredible software developer!
+    He works hard and loves challenges and learns and grasps concepts quickly!
+    Matthew is a pleasure to be around and is a great team member for providing ideas, listening, and contributing to a positive and friendly work environment. Matthew is kind, intelligent and all around awesome!
+                  
+    </p>
+                </div>
+                <nav class="level is-mobile">
+                    <div class="level-right">
+                      <a href="https://www.linkedin.com/in/buck-hedges-37985b60/" target="_blank" class="level-item">
+                        <span class="icon is-small"><i class="fab fa-linkedin-in"></i></span>
+                      </a>
+                      <strong>Buck Hedges</strong>&nbsp;|&nbsp;<small>Web Production Technician&nbsp;|&nbsp; <i>Adams Publishing Group LLC</i></small>               
+                    </div>
+                  </nav>
+              </div>
+            </article>
     </div>
-  </footer>
-
-  <!-- Example row of columns -->
-  <h1 id="report-card treehouse-count"></h1>
+  </br>
+  <div class="container">
+      <a href="https://www.linkedin.com/in/matthewmcguff/" target="_blank">
+        <div class="content has-text-centered">
+          See more Testimonals on LinkedIn
+        </div>
+        </a>
   </div>
-  <!-- /container -->
-  <script src="js/github.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+   
+  </section>
+  <hr>
+  <section class="section">
+    <div class="container">
+      <form method="POST" action="https://formspree.io/matthewmcguff85@gmail.com">
+ 
+      <div class="heading">
+        <h1 id="contact" class="title">Contact Me</h1>
+        <hr>
+        <article class="message is-warning no-upper">
+            <div class="message-header">
+              <p>Pro Tip</p>
+            </div>
+            <div class="message-body">
+              I offer all those who reach out to me a <strong>free 1 hour consultation</strong>!  This includes those seeking to hire, to consult or looking for mentorship/networking.  Look forward to speaking with you soon!
+            </div>
+          </article>
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="name" type="text" placeholder="Name" value="" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
+          </div>
+        </div>
 
-  <script src="js/reportcard/js/vendor/bootstrap.min.js"></script>
+        <div class="field">
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" name="email" type="email" placeholder="Email" />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
 
-  <script src="js/reportcard/js/reportcard.js"></script>
-  <script>
-    $('.report-card.treehouse').reportCard({
-      userName: 'matthewmcguff',
-      site: 'treehouse',
-      badgesAmount: 8,
-      tooltips: true
-    });
+        <div class="field">
+            
+          <div class="control">
+              <div class="select" name="contact_reason">
+                  <select>
+                    <option>Please select a contact reason</option>
+                    <option>Job Opporutnity</option>
+                    <option>Consultancy</option>
+                    <option>Mentorship</option>
+                  </select>
+                </div>
+          </div>
+        </div>
+  
 
-    $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
-
-  </script>
+        <div class="field">
+          <div class="control">
+            <textarea class="textarea" name="message" placeholder="Let me know what it is I can help you with..."></textarea>
+          </div>
+        </div>
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-success is-link is-large" type="submit">Submit</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    </div>
+  </section>
 </body>
 
 </html>
