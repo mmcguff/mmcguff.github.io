@@ -7,6 +7,12 @@
     color: white !important;
 }
 
+.navbar-item:hover {
+    color: blue !important;
+    background-color: white !important;
+    border-radius: 5%;
+}
+
 .fa-tint{
     color: #6EC5E3;
 }
@@ -122,4 +128,8 @@
 
 .no-upper{
     text-transform: initial;
+}
+
+.sbs-logo {
+  border-radius: 30%;
 }
