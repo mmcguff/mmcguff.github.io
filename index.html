@@ -11,6 +11,9 @@
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W1771HBN9"></script>
@@ -22,12 +25,15 @@
   gtag('config', 'G-4W1771HBN9');
 </script>
 
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+  </style>
 
 <body>
   <!-- Calendly badge widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devguff/one-hour-meeting', text: '📅 Schedule Meeting', color: 'hsl(171, 100%, 41%)', textColor: '#ffffff', branding: true }); }</script>
+<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/devguff/meeting', text: '📅 Schedule Meeting', color: 'hsl(171, 100%, 41%)', textColor: '#ffffff', branding: true }); }</script>
 <!-- Calendly badge widget end -->
 <!-- Calendly link widget begin -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -41,7 +47,7 @@
         <div class="container">
           <div class="navbar-brand">
             <a class="navbar-item">
-              <h1>Devguff</h1>
+              <h1><b>💻 Matthew McGuff</b></h1>
             </a>
             <span class="navbar-burger burger" data-target="navbarMenuHeroA">
               <span></span>
@@ -51,18 +57,16 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              <a class="navbar-item is-active" href="#about">
-                About
-              </a>
               <a class="navbar-item" href="#portfolio">
                 Experince
+              </a>
+              <a class="navbar-item is-active" href="#about">
+                About
               </a>
               <a class="navbar-item" href="#testimonals">
                 Testimonals
               </a>
-              <a class="navbar-item" href="#contact">
-                Contact Me
-              </a>
+
               <span class="navbar-item"> </span>
             </div>
           </div>
@@ -73,18 +77,20 @@
     <!-- Hero content: will be in the middle -->
     <div class="hero-body">
       <div class="container">
-        <h1 id="hero-title" class="title">
+        <h1 id="hero-title" class="title" ">
+
           <p class="image is-128x128" style="margin-bottom: 30px;">
             <img class="is-rounded" src="img/profile-2023.png">
           </p>
           Matthew McGuff
         </h1>
+
         <div class="container" style="margin-bottom: 10px;">
           <a href="./matthew-mcguff-cv.pdf" target="_blank" class="button is-info">
             <span class="icon"><img src="img/logos/file-solid.svg" width="15px"></span>
             <span>View Resume/CV</span>
           </a>
-          <a href="" class="button is-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/devguff/one-hour-meeting'});return false;">
+          <a href="" class="button is-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/devguff/meeting'});return false;">
             <span class="icon"><img src="img/logos/calendar-day-solid.svg" width="15px"></span>
             <span>Calendy</span>
           </a>
@@ -100,7 +106,7 @@
         <h3 id="hero-subtitle" class="subtitle">
           Senior Software Engineer | Full Stack Developer | Technologist
         </h3>
-        <!-- add tags here -->
+
       </div>
     </div>
   </section>
@@ -109,8 +115,121 @@
     <div class="container">
       <div class="heading">
         <h1 id="portfolio" class="title">Experince</h1>
+
+        <div class="tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">csharp (c#)</span>
+          <span class="tag">dotnet (.NET)</span>
+          <span class="tag">Java</span>
+          <span class="tag">Kotlin</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Kubernetes (k8)</span>
+          <span class="tag">REST API</span>
+          <span class="tag">GraphQL API</span>
+          <span class="tag">SOAP API</span>
+          <span class="tag">React</span>
+          <span class="tag">Angular</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">Firestore</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">DynamoDB</span>
+          <span class="tag">Postgres</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">AWS</span>
+          <span class="tag">S3</span>
+          <span class="tag">Lambda</span>
+          <span class="tag">ECR(Elastic Container Registry)</span>
+          <span class="tag">EC2</span>
+          <span class="tag">MEAN (Mongo, Express, Angular, Node)</span>
+          <span class="tag">MERN (Mongo, Express React, Node)</span>
+          <span class="tag">PHP</span>
+        </div>
         <div class="tile is-ancestor">
           <div class="tile is-vertical">
+            <div class="tile">
+              <div class="tile is-parent">
+                <article class="tile is-child notification">
+                  <div class="content">
+                    <a href="https://www.mesh.id/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/mesh_logo.svg" alt='mesh'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://www.resmarksystems.com/" target="_blank"><b>Mesh</b></br></br>
+                        <img src="img/logos/mesh-small-logo.png" width="50"  alt='bitbucket'></a></br>
+                        Mesh is a great startup looking to put License verification of professionals on auto pilot.  I was contracted to build a special documentation page to improve DX (Developer Experience) and make it easier for their partners to integrate with them.
+                      </br></br>
+                      Their Node.js is written using AppSync, a Graphql offering in AWS.  I made documentation around simplified REST API routes that made getting started much easier for new customers.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification ">
+                  <div class="content">
+                    <a href="https://smarterc.com/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/smart-erc-logo.svg" alt='Smart ERC'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://smarterc.com/" target="_blank"><b>Smart ERC</b></br></br>
+                        <img class="sbs-logo" src="img/logos/smart-erc-small-logo.png" height="50" width="50"
+                          alt='authenticity_logo'></a></br>
+                          Smart ERC (Employee Retention Credit) was a startup born out of the idea of making it easier for companies that kept their employees during COVID pandemic to qualify for the government's special tax credit.
+                      </br></br>
+                      My role with Smart ERC involved creating a tool that connected with a 3rd party API that would safely export relevant HR data from a company's HR system into Smart ERC accounting system to process their ERC documentation.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification ">
+                  <div class="content">
+                    <a href="https://thelanguagegroup.com/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/tlg-logo.svg" alt='traeger'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://thelanguagegroup.com/" target="_blank">
+                        <a href="https://thelanguagegroup.com/" target="_blank"><b>The Language Group</b></br></br>
+                          <img src="img/logos/tlg-small-logo.png" height="50" width="50" alt='The Language Group'></a></br>
+                          The Language Group provides large translation scale translation services for both public and private companies.
+                        </br></br>
+                        My role involved creating a special Rest API Proxy that plumbs old system data into downstream systems that generate billing, invoices and business critical analytics.
+                        </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="tile is-parent">
+                <article class="tile is-child notification ">
+                  <div class="content">
+                    <a href="https://www.waterlabsag.com/" target="_blank">
+                      <figure class="image ">
+                        <img src="img/logos/waterlabsag_logo.png" alt='waterlabsag'>
+                      </figure>
+                    </a>
+                    <div class="content has-text-centered no-upper">
+                      <a href="https://www.waterlabsag.com/" target="_blank">
+                        <b>Waterlabsag</b></br></br>
+                        <img src="img/logos/waterlabs-small-logo.webp" height="50" width="60" alt='waterlabsag'></a></br>
+                        Waterlabsag is an Ag data service that provides aggergated data from irrigation sensor and soil mositure data to Farmers and Ag Service providers.
+                      </br></br>
+                      My role involved created an API proxy that makes it possible for Farmers to see near real time data that help them make better decisions about their crops.
+                      </br>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
             <div class="tile">
               <div class="tile is-parent">
                 <article class="tile is-child notification">
@@ -309,6 +428,93 @@
           </div>
         </div>
       </div>
+      <div class="heading">
+
+      </div>
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/firebase-logo.png" height="124" width="124" alt='mongo'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/node-node-js-seeklogo.com.svg" height="124" width="124" alt='node.js'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/express-js-seeklogo.com.svg" height="124" width="124" alt='express'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/angular-seeklogo.com 2.svg" height="124" width="124" alt='angular'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/react-seeklogo.com.svg" height="124" width="124" alt='react'>
+          </div>
+        </div>
+      </nav>
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/mongodb-seeklogo.com.svg" height="124" width="124" alt='mongo'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/microsoft-sql-server-seeklogo.com.svg" height="124" width="124"
+              alt='microsoft-sql-server'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/microsoft-azure-seeklogo.com.svg" height="124" width="124" alt='microsoft-azure'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/google-cloud-seeklogo.com.svg" height="124" width="124" alt='google-cloud-platform'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/heroku-seeklogo.com.svg" height="80" width="124" alt='heroku'>
+          </div>
+        </div>
+      </nav>
+      <nav class="level">
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/wordpress-seeklogo.com.svg" height="124" width="124" alt='wordpress'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/php-seeklogo.com.svg" height="124" width="124" alt='php'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/trello-seeklogo.com.svg" height="124" width="124" alt='trello'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/jira-seeklogo.com.svg" height="124" width="124" alt='jira'>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div>
+            <img src="img/logos/bitbucket-seeklogo.com.svg" height="124" width="124" alt='bitbucket'>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
   </section>
   <section class="section">
     <div class="container">
@@ -355,104 +561,6 @@
       <br>
       <hr>
 
-
-      <div class="heading">
-        <h2 class="subtitle">
-          Some of the technologies I have worked with extensively include:
-        </h2>
-      </div>
-
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/firebase-logo.png" height="124" width="124" alt='mongo'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/node-node-js-seeklogo.com.svg" height="124" width="124" alt='node.js'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/express-js-seeklogo.com.svg" height="124" width="124" alt='express'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/angular-seeklogo.com 2.svg" height="124" width="124" alt='angular'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/react-seeklogo.com.svg" height="124" width="124" alt='react'>
-          </div>
-        </div>
-      </nav>
-
-
-
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/mongodb-seeklogo.com.svg" height="124" width="124" alt='mongo'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/microsoft-sql-server-seeklogo.com.svg" height="124" width="124"
-              alt='microsoft-sql-server'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/microsoft-azure-seeklogo.com.svg" height="124" width="124" alt='microsoft-azure'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/google-cloud-seeklogo.com.svg" height="124" width="124" alt='google-cloud-platform'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/heroku-seeklogo.com.svg" height="80" width="124" alt='heroku'>
-          </div>
-        </div>
-      </nav>
-
-      <nav class="level">
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/wordpress-seeklogo.com.svg" height="124" width="124" alt='wordpress'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/php-seeklogo.com.svg" height="124" width="124" alt='php'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/trello-seeklogo.com.svg" height="124" width="124" alt='trello'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/jira-seeklogo.com.svg" height="124" width="124" alt='jira'>
-          </div>
-        </div>
-        <div class="level-item has-text-centered">
-          <div>
-            <img src="img/logos/bitbucket-seeklogo.com.svg" height="124" width="124" alt='bitbucket'>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </section>
-  <hr>
-
-  <hr>
   <section class="section">
     <div class="container">
       <div class="heading">
@@ -560,15 +668,7 @@
         <div class="heading">
           <h1 id="contact" class="title">Contact Me</h1>
           <hr>
-          <article class="message is-warning no-upper">
-            <div class="message-header">
-              <p>Pro Tip</p>
-            </div>
-            <div class="message-body">
-              I offer all those who reach out to me a <strong>free 1 hour consultation</strong>! This includes those
-              seeking to hire, to consult or looking for mentorship/networking. Look forward to speaking with you soon!
-            </div>
-          </article>
+
           <div class="field">
             <div class="control has-icons-left has-icons-right">
               <input class="input" name="name" type="text" placeholder="Name" value="" />
@@ -592,10 +692,11 @@
             <div class="control">
               <div class="select">
                 <select name="contact_reason">
-                  <option>Please select a contact reason</option>
+                  <option>Contact Reason:</option>
                   <option>Job Opporutnity</option>
                   <option>Consultancy</option>
                   <option>Mentorship</option>
+                  <option>Something Else</option>
                 </select>
               </div>
             </div>
@@ -617,6 +718,49 @@
       </form>
     </div>
   </section>
+  <div class="modal is-active">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">🫵🏻 Welcome Tech Recuriters! 🫵🏻</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/38cc3ddc20e94c44a9c0ad2c974982a2?sid=b605b47c-0c88-43e5-a697-a52fba04f1a1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+        <br>
+        <ul>
+          <li></li>
+          <li>devguff@gmail.com</li>
+          <li>208-970-9341</li>
+        </ul>
+
+
+
+      </section>
+      <footer class="modal-card-foot">
+        <div class="container" style="margin-bottom: 10px;">
+          <a href="./matthew-mcguff-cv.pdf" target="_blank" class="button is-info">
+            <span class="icon"><img src="img/logos/file-solid.svg" width="15px"></span>
+            <span>View Resume/CV</span>
+          </a>
+          <a href="" class="button is-primary" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/devguff/one-hour-meeting'});return false;">
+            <span class="icon"><img src="img/logos/calendar-day-solid.svg" width="15px"></span>
+            <span>Calendy</span>
+          </a>
+          <a href="#contact" class="button is-warning">
+            <span class="icon"><img src="img/logos/envelope-solid.svg" width="15px"></span>
+            <span>Contact</span>
+          </a>
+          <a href="https://www.upwork.com/o/profiles/users/_~01fcb8875f2837cc4a" target="_blank" class="button is-success">
+            <span class="icon"><img src="img/logos/sack-dollar-solid.svg" width="15px"></span>
+            <span>Hire</span>
+          </a>
+
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="./script.js"></script>
 </body>
 
 </html>
