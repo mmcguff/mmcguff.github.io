@@ -1,4 +1,4 @@
-# Matthew McGuff Portfolio Site
+# Matthew McGuff Portfolio Site 💻
 
 Here is list of things that should be possible from this portfolio site: 
 
