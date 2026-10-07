@@ -8,4 +8,4 @@ Here is list of things that should be possible from this portfolio site:
 - [ ] As a user I should be able to easily contact Matthew McGuff.
 - [ ] As a user I should be able to book time onto Matthew McGuff's Calendar.
 - [ ] As a user I should be able to linked to blog pages where I can learn more about what Matthew is currently working
-- [ ] As a user I should be able have a space affilate marketing to make money from vistors who come to my site.
+- [ ] As a user I should be able have a space affiliate marketing to make money from visitors who come to my site.
