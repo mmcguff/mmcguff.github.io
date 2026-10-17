@@ -12,7 +12,7 @@ Here is list of things that should be possible from this portfolio site:
 
 ## Local development
 
-The site is built with [Astro](https://astro.build) and deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `master`. Requires Node 22.22+.
+The site is built with [Astro](https://astro.build) and deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`. Requires Node 22.22+.
 
 ```sh
 npm ci                 # install
@@ -44,6 +44,6 @@ Static files (images, CSS, the resume PDF) live in `public/` and are served from
 
    A missing or wrongly typed field fails the build with an error naming the field.
 3. `draft: true` keeps the post visible in `npm run dev` but leaves it out of the production build: no page, no blog index entry, no RSS item. Remove it (or set `draft: false`) to publish.
-4. Preview with `npm run dev`, then open a PR. CI builds and tests it; merging to `master` deploys it.
+4. Preview with `npm run dev`, then open a PR. CI builds and tests it; merging to `main` deploys it.
 
 Published posts appear at `/blog/`, in the RSS feed at `/rss.xml` (point DEV.to/Hashnode/Medium imports there), and get a Giscus comment thread backed by this repo's GitHub Discussions.

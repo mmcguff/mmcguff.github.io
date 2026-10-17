@@ -4,7 +4,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { parse as parseYaml } from 'yaml';
 import { ROOT } from '../helpers';
 
-// AC11: build + test on PRs, deploy to Pages only from master.
+// AC11: build + test on PRs, deploy to Pages only from main.
 const WORKFLOW = path.join(ROOT, '.github/workflows/deploy.yml');
 
 type Step = { uses?: string; run?: string };
@@ -20,12 +20,18 @@ describe('GitHub Pages workflow', () => {
     wf = parseYaml(fs.readFileSync(WORKFLOW, 'utf8'));
   });
 
-  it('runs on pushes to master', () => {
-    expect(wf.on.push.branches).toContain('master');
+  it('runs on pushes to main', () => {
+    expect(wf.on.push.branches).toContain('main');
   });
 
-  it('runs on pull requests to master', () => {
-    expect(wf.on.pull_request.branches).toContain('master');
+  it('runs on pull requests to main', () => {
+    expect(wf.on.pull_request.branches).toContain('main');
+  });
+
+  // #30: main is the only branch that triggers, so the old default can't sneak back in.
+  it('triggers on main only', () => {
+    expect(wf.on.push.branches).toEqual(['main']);
+    expect(wf.on.pull_request.branches).toEqual(['main']);
   });
 
   it('grants only read access at the workflow level', () => {
