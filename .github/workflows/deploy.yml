@@ -1,0 +1,72 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deployment at a time; don't cancel a deploy that's already running.
+# PR runs are cancelled when a newer push replaces them.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Unit tests
+        run: npm run test:unit
+      - name: Build
+        run: npm run build
+      - name: Integration tests
+        run: npm run test:integration
+      - name: E2E tests
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:e2e -- --grep-invert @network
+      # Third-party checks (giscus.app) report failures as warnings instead of blocking the deploy.
+      - name: E2E tests (third-party, non-blocking)
+        id: e2e-network
+        continue-on-error: true
+        run: npm run test:e2e -- --grep @network
+      - name: Warn on third-party E2E failure
+        if: steps.e2e-network.outcome == 'failure'
+        run: echo "::warning title=Giscus check failed::Comments did not load from giscus.app. Deploy continued; check https://www.githubstatus.com and the Giscus config in src/consts.ts."
+      - uses: actions/upload-artifact@v7
+        if: failure() || steps.e2e-network.outcome == 'failure'
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
+        with:
+          path: dist/
+
+  deploy:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

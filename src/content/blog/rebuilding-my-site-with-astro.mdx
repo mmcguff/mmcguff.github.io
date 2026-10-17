@@ -1,0 +1,92 @@
+---
+title: Rebuilding my portfolio as a Markdown-first blog with Astro
+description: Why I moved a single hand-written HTML page to Astro, and how content collections, RSS and GitHub Discussions turn it into a small publishing pipeline.
+pubDate: 2026-10-16
+---
+
+For years this site was one `index.html` file. That was perfect for a portfolio: no build step, no dependencies, and GitHub Pages served it straight from the repo. But I wanted a place to write longer-form notes about the things I spend my days on, like data pipelines, RAG systems and the unglamorous parts of enterprise integration. A single HTML file doesn't scale to that.
+
+This post covers what I wanted, what I picked, and how the pieces fit together. It's also the first post on the new setup, so if you're reading it, the pipeline works.
+
+## What I wanted
+
+I had four requirements:
+
+1. **Write in Markdown.** If writing a post means fighting HTML, I won't write posts.
+2. **Catch mistakes at build time.** A post with a missing date or a typo'd field shouldn't quietly ship broken.
+3. **Own the canonical copy, syndicate the rest.** Posts should live here first and flow out to DEV.to, Hashnode and Medium from a feed, not get copy-pasted by hand.
+4. **Let readers talk back,** without me running a database or a comment-moderation service.
+
+## Why Astro
+
+[Astro](https://astro.build) is built for content sites. By default it renders everything to static HTML at build time and ships zero JavaScript unless a page asks for it. That's exactly the right shape for GitHub Pages, which only serves static files.
+
+It also didn't make me throw away the old site. The existing homepage moved over almost verbatim. The only real change was swapping a few malformed tags (`</br>`, stray closers) that browsers had been quietly forgiving for years. Astro's compiler is stricter than a browser, which turned out to be a free HTML lint.
+
+## Typed frontmatter with content collections
+
+Posts live in `src/content/blog/` as `.md` or `.mdx` files. Astro's content collections load them with a glob loader and validate each file's frontmatter against a schema:
+
+```ts
+// src/content/schema.ts
+import { z } from 'astro/zod';
+
+export const blogSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  pubDate: z.coerce.date(),
+  updatedDate: z.coerce.date().optional(),
+  draft: z.boolean().default(false),
+  heroImage: z.string().optional(),
+});
+```
+
+```ts
+// src/content.config.ts
+import { glob } from 'astro/loaders';
+import { defineCollection } from 'astro:content';
+import { blogSchema } from './content/schema';
+
+const blog = defineCollection({
+  loader: glob({ pattern: '**/[^_]*.{md,mdx}', base: './src/content/blog' }),
+  schema: blogSchema,
+});
+
+export const collections = { blog };
+```
+
+If I forget a `description` or write `pubDate: someday`, the build fails and names the field. Every page that reads posts also gets fully typed data, so `post.data.pubDate` is a real `Date`, not a string I have to remember to parse.
+
+Keeping the schema in its own module was a small but deliberate choice: it lets me unit-test the rules with plain Vitest, without booting Astro.
+
+## Drafts, in one place
+
+Setting `draft: true` keeps a post visible in `npm run dev` so I can preview it, and leaves it out of production builds. The rule lives in a single helper that the blog index, the post pages and the RSS feed all call. If it lived in three places, sooner or later one of them would leak a draft into the feed.
+
+## RSS as the syndication backbone
+
+The feed at [`/rss.xml`](/rss.xml) comes from `@astrojs/rss`, using the same list of published posts. Every item links to the absolute URL on this site, which matters: when DEV.to or Hashnode import from the feed, they can set the canonical URL back here, so search engines credit the original.
+
+There's no API cross-posting code. Each platform's "import from RSS" feature does the work, and that's one less integration for me to maintain.
+
+<aside class="notification is-info is-light">
+  This post is MDX, not plain Markdown. That means I can drop in HTML or components, like this callout, when a plain paragraph isn't enough.
+</aside>
+
+## Comments without a backend
+
+Comments use [Giscus](https://giscus.app), which stores each post's thread as a GitHub Discussion in this site's repo. Readers sign in with GitHub, I moderate from the Discussions tab, and nothing runs on my side but a script tag. For a technical blog whose readers mostly already have GitHub accounts, that's a good trade.
+
+## Build, test, deploy
+
+A GitHub Actions workflow builds the site on every pull request and push. It runs three layers of tests:
+
+- **Unit tests** cover the frontmatter schema, the draft filter and the workflow config itself.
+- **Integration tests** parse the built HTML and RSS in `dist/`, checking that the homepage kept every section and link, that each post has a canonical URL, and that the feed is valid.
+- **End-to-end tests** in Playwright click through the real site, load the comments widget and check that pages don't scroll sideways on a phone.
+
+Only pushes to `master` deploy to GitHub Pages; pull requests just prove they would work.
+
+## What's next
+
+Tag pages, search, a newsletter and a homepage refresh are all on the list, each as its own issue. For now the goal is simple: make writing the easy part. If something here is useful, or wrong, the comments are below.

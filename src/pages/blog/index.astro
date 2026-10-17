@@ -1,0 +1,32 @@
+---
+import BlogHeader from '../../components/BlogHeader.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedPosts } from '../../lib/posts';
+
+const posts = await getPublishedPosts();
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+---
+
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <BlogHeader title="Blog" subtitle={SITE_DESCRIPTION} />
+  <main class="section">
+    <div class="container is-max-desktop">
+      {posts.length === 0 && <p>No posts yet — check back soon.</p>}
+      {
+        posts.map((post) => (
+          <article class="box">
+            <h2 class="title is-4">
+              <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+            </h2>
+            <p class="subtitle is-6">
+              <time datetime={post.data.pubDate.toISOString()}>{formatDate(post.data.pubDate)}</time>
+            </p>
+            <p>{post.data.description}</p>
+          </article>
+        ))
+      }
+    </div>
+  </main>
+</BaseLayout>
