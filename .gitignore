@@ -1,1 +1,7 @@
 .vscode
+.sdlc_state.md
+node_modules/
+dist/
+.astro/
+test-results/
+playwright-report/
