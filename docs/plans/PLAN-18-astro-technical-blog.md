@@ -140,3 +140,16 @@ Three layers: **unit** (Vitest, pure functions, no build); **integration** (Vite
 ## Open Questions (design)
 - Giscus `repoId`/`categoryId`: need Discussions enabled first. The unit test in AC10 will deliberately fail until they're filled in.
 - Recruiter modal: it's in the markup but nothing currently opens it (`script.js` only binds `.js-modal-trigger`, and the modal has no `id`). It is ported unchanged; whether to remove it is left to #23.
+
+## Implementation Notes (coder)
+Deviations from the File Changes table, all small:
+- **`src/components/BlogHeader.astro` (new):** shared header for the blog index and post pages (brand link home, Blog, RSS), styled with the homepage's `hero-image` pattern. The blog pages needed a way back to the homepage.
+- **`tests/e2e/serve-dist.mjs` (new) + `playwright.config.ts` webServer change:** `astro preview` (Astro 7) moves itself to the background when stdout isn't a TTY, which Playwright treats as the server crashing. A ~50-line dependency-free Node static server for `dist/` replaces it.
+- **Homepage markup fixes** needed for Astro's strict compiler, each chosen to match how browsers already render the old page (full-page screenshots of live vs. local are the same height at 1280px and 375px):
+  - 64× `</br>` → `<br>` (browsers treat `</br>` as `<br>`);
+  - removed a stray `</hr>`, a stray `</section>`, a stray `</i>`, and a stray `"` in `#hero-title`;
+  - removed 4 unclosed outer `<a>` wrappers that browsers turned into empty links (on the Compliance.ai, Language Group, Traeger and Curriculum cards);
+  - the About section's missing `</div></section>` is closed at the end of the page, where browsers closed it, so Testimonials and Contact stay nested exactly as they render today. #23 should fix this properly.
+- **Redundant inline `<style>@import` Black Ops One** dropped from `<head>`; the same font is already loaded by the `<link>` tag.
+- **Workflow** adds a Playwright report upload on failure and a `concurrency` group for Pages.
+- **Giscus `repoId`** is filled in (`R_kgDOBYwOmw`, from the GitHub API). `categoryId` stays `TODO_FROM_GISCUS_APP` until Discussions is enabled, so 1 unit test stays red on purpose.

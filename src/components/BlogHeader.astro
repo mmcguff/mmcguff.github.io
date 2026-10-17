@@ -1,0 +1,28 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="hero hero-image is-small">
+  <div class="hero-head">
+    <nav class="navbar" aria-label="Blog navigation">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/"><b>💻 Matthew McGuff</b></a>
+          <a class="navbar-item" href="/blog/">Blog</a>
+          <a class="navbar-item" href="/rss.xml" aria-label="RSS feed">RSS</a>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="hero-body">
+    <div class="container">
+      <p class="title hero-text">{title}</p>
+      {subtitle && <p class="subtitle hero-text">{subtitle}</p>}
+    </div>
+  </div>
+</section>
