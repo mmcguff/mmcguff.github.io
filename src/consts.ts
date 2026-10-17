@@ -4,12 +4,12 @@ export const SITE_DESCRIPTION =
 
 /**
  * Giscus comments, backed by this repo's GitHub Discussions. These IDs are public, not secrets.
- * categoryId comes from https://giscus.app once Discussions is enabled and the category exists.
+ * Values from https://giscus.app (or the GitHub GraphQL API with the X-Github-Next-Global-ID header).
  */
 export const GISCUS = {
   repo: 'mmcguff/mmcguff.github.io',
   repoId: 'R_kgDOBYwOmw',
-  category: 'Blog Comments',
-  categoryId: 'TODO_FROM_GISCUS_APP',
+  category: 'Announcements',
+  categoryId: 'DIC_kwDOBYwOm84DIsDB',
   mapping: 'pathname',
 } as const;

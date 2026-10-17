@@ -37,7 +37,15 @@ jobs:
       - name: E2E tests
         run: |
           npx playwright install --with-deps chromium
-          npm run test:e2e
+          npm run test:e2e -- --grep-invert @network
+      # Third-party checks (giscus.app) report failures as warnings instead of blocking the deploy.
+      - name: E2E tests (third-party, non-blocking)
+        id: e2e-network
+        continue-on-error: true
+        run: npm run test:e2e -- --grep @network
+      - name: Warn on third-party E2E failure
+        if: steps.e2e-network.outcome == 'failure'
+        run: echo "::warning title=Giscus check failed::Comments did not load from giscus.app. Deploy continued; check https://www.githubstatus.com and the Giscus config in src/consts.ts."
       - uses: actions/upload-artifact@v7
         if: failure()
         with:

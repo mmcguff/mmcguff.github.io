@@ -152,4 +152,4 @@ Deviations from the File Changes table, all small:
   - the About section's missing `</div></section>` is closed at the end of the page, where browsers closed it, so Testimonials and Contact stay nested exactly as they render today. #23 should fix this properly.
 - **Redundant inline `<style>@import` Black Ops One** dropped from `<head>`; the same font is already loaded by the `<link>` tag.
 - **Workflow** adds a Playwright report upload on failure and a `concurrency` group for Pages.
-- **Giscus `repoId`** is filled in (`R_kgDOBYwOmw`, from the GitHub API). `categoryId` stays `TODO_FROM_GISCUS_APP` until Discussions is enabled, so 1 unit test stays red on purpose.
+- **Giscus:** Discussions enabled on the repo. Comments use the default **Announcements** category (`DIC_kwDOBYwOm84DIsDB`) instead of a custom "Blog Comments" one, because GitHub's API can't create categories (Matthew's choice). `repoId` is `R_kgDOBYwOmw`. The Giscus GitHub App must be installed on the repo.

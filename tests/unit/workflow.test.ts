@@ -45,6 +45,28 @@ describe('GitHub Pages workflow', () => {
     expect(runs(wf.jobs.build)).toContain('npm run test:e2e');
   });
 
+  it('keeps @network tests out of the e2e step that gates deploys', () => {
+    const gating = wf.jobs.build.steps.filter(
+      (s: Step & { 'continue-on-error'?: boolean }) => s.run?.includes('npm run test:e2e') && !s['continue-on-error'],
+    );
+    expect(gating.length).toBeGreaterThan(0);
+    for (const step of gating) expect(step.run).toContain('--grep-invert @network');
+  });
+
+  it('runs @network tests in a non-blocking step', () => {
+    const step = wf.jobs.build.steps.find((s) => s.run?.includes('--grep @network')) as
+      | (Step & { id?: string; 'continue-on-error'?: boolean })
+      | undefined;
+    expect(step?.['continue-on-error']).toBe(true);
+    expect(step?.id).toBeTruthy();
+  });
+
+  it('logs a warning annotation when the @network step fails', () => {
+    const id = (wf.jobs.build.steps.find((s) => s.run?.includes('--grep @network')) as { id?: string })?.id;
+    const warn = wf.jobs.build.steps.find((s: Step & { if?: string }) => s.if?.includes(`steps.${id}.outcome == 'failure'`));
+    expect(warn?.run).toContain('::warning');
+  });
+
   it('uploads dist/ as the Pages artifact', () => {
     const upload = wf.jobs.build.steps.find((s) => s.uses?.startsWith('actions/upload-pages-artifact'));
     expect(upload).toBeDefined();
