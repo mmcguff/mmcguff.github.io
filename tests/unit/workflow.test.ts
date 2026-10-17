@@ -8,7 +8,7 @@ import { ROOT } from '../helpers';
 const WORKFLOW = path.join(ROOT, '.github/workflows/deploy.yml');
 
 type Step = { uses?: string; run?: string };
-type Job = { needs?: string | string[]; if?: string; steps: Step[] };
+type Job = { needs?: string | string[]; if?: string; permissions?: Record<string, string>; steps: Step[] };
 let wf: { on: Record<string, any>; permissions: Record<string, string>; jobs: Record<string, Job> };
 
 const runs = (job: Job) => job.steps.map((s) => s.run ?? '').join('\n');
@@ -28,8 +28,17 @@ describe('GitHub Pages workflow', () => {
     expect(wf.on.pull_request.branches).toContain('master');
   });
 
-  it('grants the permissions Pages deployment needs', () => {
-    expect(wf.permissions).toMatchObject({ pages: 'write', 'id-token': 'write' });
+  it('grants only read access at the workflow level', () => {
+    expect(wf.permissions).toEqual({ contents: 'read' });
+  });
+
+  it('grants Pages write permissions to the deploy job only', () => {
+    expect(wf.jobs.deploy.permissions).toMatchObject({ pages: 'write', 'id-token': 'write' });
+    expect(wf.jobs.build.permissions).toBeUndefined();
+  });
+
+  it('cancels superseded PR runs but never an in-flight deploy', () => {
+    expect((wf as any).concurrency['cancel-in-progress']).toMatch(/github\.event_name\s*==\s*'pull_request'/);
   });
 
   it('installs, unit tests, builds, and integration tests in the build job, in that order', () => {
@@ -67,10 +76,18 @@ describe('GitHub Pages workflow', () => {
     expect(warn?.run).toContain('::warning');
   });
 
-  it('uploads dist/ as the Pages artifact', () => {
+  it('uploads the Playwright report when the @network step fails', () => {
+    const id = (wf.jobs.build.steps.find((s) => s.run?.includes('--grep @network')) as { id?: string })?.id;
+    const upload = wf.jobs.build.steps.find((s) => s.uses?.startsWith('actions/upload-artifact')) as Step & { if?: string };
+    expect(upload?.if).toContain('failure()');
+    expect(upload?.if).toContain(`steps.${id}.outcome == 'failure'`);
+  });
+
+  it('uploads dist/ as the Pages artifact, except on pull requests', () => {
     const upload = wf.jobs.build.steps.find((s) => s.uses?.startsWith('actions/upload-pages-artifact'));
     expect(upload).toBeDefined();
     expect((upload as any).with?.path).toMatch(/^\.?\/?dist\/?$/);
+    expect((upload as any).if).toMatch(/github\.event_name\s*!=\s*'pull_request'/);
   });
 
   it('deploys with actions/deploy-pages after the build job', () => {
