@@ -85,7 +85,7 @@ A GitHub Actions workflow builds the site on every pull request and push. It run
 - **Integration tests** parse the built HTML and RSS in `dist/`, checking that the homepage kept every section and link, that each post has a canonical URL, and that the feed is valid.
 - **End-to-end tests** in Playwright click through the real site, load the comments widget and check that pages don't scroll sideways on a phone.
 
-Only pushes to `master` deploy to GitHub Pages; pull requests just prove they would work.
+Only pushes to `main` deploy to GitHub Pages; pull requests just prove they would work.
 
 ## What's next
 

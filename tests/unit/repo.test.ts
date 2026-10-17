@@ -51,3 +51,32 @@ describe('.gitignore', () => {
     expect(ignored()).toContain(entry);
   });
 });
+
+// #30 AC5: the default branch is main; nothing live still points at master.
+// docs/ is excluded on purpose: the #18 plan and manual tests are historical records.
+describe('default branch references', () => {
+  const SELF = path.join(ROOT, 'tests/unit/repo.test.ts');
+  const filesUnder = (dir: string) =>
+    fs
+      .readdirSync(path.join(ROOT, dir), { recursive: true, withFileTypes: true })
+      .filter((e) => e.isFile())
+      .map((e) => path.join(e.parentPath, e.name));
+  const scanned = () =>
+    [path.join(ROOT, 'readme.MD'), ...filesUnder('.github'), ...filesUnder('src'), ...filesUnder('tests')].filter(
+      (f) => f !== SELF,
+    );
+
+  it('scans the workflow, readme, src and tests', () => {
+    const rel = scanned().map((f) => path.relative(ROOT, f));
+    expect(rel).toContain('.github/workflows/deploy.yml');
+    expect(rel).toContain('readme.MD');
+    expect(rel).toContain('src/content/blog/rebuilding-my-site-with-astro.mdx');
+  });
+
+  it('has no remaining references to the master branch', () => {
+    const offenders = scanned()
+      .filter((f) => /\bmaster\b/.test(fs.readFileSync(f, 'utf8')))
+      .map((f) => path.relative(ROOT, f));
+    expect(offenders).toEqual([]);
+  });
+});
