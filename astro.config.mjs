@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://mmcguff.github.io',
+  site: 'https://devguff.com',
   integrations: [mdx(), sitemap()],
 });
