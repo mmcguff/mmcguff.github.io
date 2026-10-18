@@ -803,7 +803,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <hr>
   <section class="section">
     <div class="container">
-      <form method="POST" action="https://formspree.io/matthewmcguff85@gmail.com">
+      <form id="contact-form" method="POST" action="https://formspree.io/f/xkjoevpv">
 
         <div class="heading">
           <h1 id="contact" class="title">Contact Me</h1>
@@ -820,7 +820,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="field">
             <div class="control has-icons-left has-icons-right">
-              <input class="input" name="email" type="email" placeholder="Email" />
+              <input class="input" name="email" type="email" placeholder="Email" required />
               <span class="icon is-small is-left">
                 <i class="fas fa-envelope"></i>
               </span>
@@ -832,7 +832,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="control">
               <div class="select">
                 <select name="contact_reason">
-                  <option>Contact Reason:</option>
+                  <option value="Something Else" selected>Contact Reason:</option>
                   <option>Job Opportunity</option>
                   <option>Consultancy</option>
                   <option>Mentorship</option>
@@ -846,14 +846,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="field">
             <div class="control">
               <textarea class="textarea" name="message"
-                placeholder="Let me know what it is I can help you with..."></textarea>
+                placeholder="Let me know what it is I can help you with..." required></textarea>
             </div>
           </div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none" />
           <div class="field is-grouped">
             <div class="control">
               <button class="button is-success is-link is-large" type="submit">Submit</button>
             </div>
           </div>
+          <p id="contact-status" class="help is-size-6" role="status" aria-live="polite"></p>
         </div>
       </form>
     </div>
