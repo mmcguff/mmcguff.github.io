@@ -90,6 +90,14 @@ describe('GitHub Pages workflow', () => {
     expect(warn?.run).toContain('::warning');
   });
 
+  // #32: the @network step also checks DNSSEC, so its warning has to point there too.
+  it('names both Giscus and DNSSEC in the @network warning', () => {
+    const id = (wf.jobs.build.steps.find((s) => s.run?.includes('--grep @network')) as { id?: string })?.id;
+    const warn = wf.jobs.build.steps.find((s: Step & { if?: string }) => s.if?.includes(`steps.${id}.outcome == 'failure'`));
+    expect(warn?.run).toContain('Giscus');
+    expect(warn?.run).toContain('DNSSEC');
+  });
+
   it('uploads the Playwright report when the @network step fails', () => {
     const id = (wf.jobs.build.steps.find((s) => s.run?.includes('--grep @network')) as { id?: string })?.id;
     const upload = wf.jobs.build.steps.find((s) => s.uses?.startsWith('actions/upload-artifact')) as Step & { if?: string };

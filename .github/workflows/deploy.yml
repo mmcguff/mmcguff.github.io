@@ -39,14 +39,14 @@ jobs:
         run: |
           npx playwright install --with-deps chromium
           npm run test:e2e -- --grep-invert @network
-      # Third-party checks (giscus.app) report failures as warnings instead of blocking the deploy.
+      # Third-party and live-DNS checks (giscus.app, DNSSEC) report failures as warnings instead of blocking the deploy.
       - name: E2E tests (third-party, non-blocking)
         id: e2e-network
         continue-on-error: true
         run: npm run test:e2e -- --grep @network
       - name: Warn on third-party E2E failure
         if: steps.e2e-network.outcome == 'failure'
-        run: echo "::warning title=Giscus check failed::Comments did not load from giscus.app. Deploy continued; check https://www.githubstatus.com and the Giscus config in src/consts.ts."
+        run: echo "::warning title=Third-party check failed::A @network test failed (Giscus comments or DNSSEC). Deploy continued; see the Playwright report. For Giscus, check https://www.githubstatus.com and src/consts.ts. For DNSSEC, check https://dnsviz.net/d/devguff.com/dnssec/ and docs/MANUAL_TEST_CASES-32-enable-dnssec.md."
       - uses: actions/upload-artifact@v7
         if: failure() || steps.e2e-network.outcome == 'failure'
         with:
