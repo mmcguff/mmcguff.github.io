@@ -17,6 +17,17 @@ describe('package.json type checking', () => {
     expect(pkg().devDependencies?.typescript).toMatch(/^\^6\./);
   });
 
+  // #28: feed HTML is sanitized at build time, so the sanitizer is a runtime dependency and its types a dev one.
+  it('has sanitize-html as a dependency', () => {
+    expect(pkg().dependencies?.['sanitize-html']).toBeTruthy();
+    expect(pkg().devDependencies?.['sanitize-html']).toBeUndefined();
+  });
+
+  it('has @types/sanitize-html as a devDependency', () => {
+    expect(pkg().devDependencies?.['@types/sanitize-html']).toBeTruthy();
+    expect(pkg().dependencies?.['@types/sanitize-html']).toBeUndefined();
+  });
+
   it('has a check script that runs astro check', () => {
     expect(pkg().scripts?.check).toBe('astro check');
   });
