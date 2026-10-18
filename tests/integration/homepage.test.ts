@@ -31,7 +31,7 @@ describe('homepage (dist/index.html)', () => {
 
   it('keeps the Formspree contact form', () => {
     const $ = loadDist('index.html');
-    expect($('form[action^="https://formspree.io/"]').length).toBe(1);
+    expect($('form[action^="https://formspree.io/f/"]').length).toBe(1);
   });
 
   // AC3: resume and static assets still resolve.
