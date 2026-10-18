@@ -56,6 +56,14 @@ describe('GitHub Pages workflow', () => {
     expect([...order].sort((a, b) => a - b)).toEqual(order);
   });
 
+  // #29 AC3: type errors fail the job before anything is built.
+  it('type checks after installing and before building', () => {
+    const script = runs(wf.jobs.build);
+    const [install, check, build] = ['npm ci', 'npm run check', 'npm run build'].map((cmd) => script.indexOf(cmd));
+    expect(check).toBeGreaterThan(install);
+    expect(check).toBeLessThan(build);
+  });
+
   it('runs the e2e suite in the build job', () => {
     expect(runs(wf.jobs.build)).toContain('npm run test:e2e');
   });

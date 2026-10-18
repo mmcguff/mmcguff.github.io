@@ -19,6 +19,7 @@ It's served at https://devguff.com. `www.devguff.com` and `mmcguff.github.io` re
 ```sh
 npm ci                 # install
 npm run dev            # dev server at http://localhost:4321 (shows drafts)
+npm run check          # type check .astro and .ts files (CI runs this too)
 npm run build          # production build into dist/
 npm run preview        # serve dist/ locally
 
