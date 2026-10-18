@@ -14,6 +14,8 @@ Here is list of things that should be possible from this portfolio site:
 
 The site is built with [Astro](https://astro.build) and deployed to GitHub Pages by `.github/workflows/deploy.yml` on every push to `main`. Requires Node 22.22+.
 
+It's served at https://devguff.com. `www.devguff.com` and `mmcguff.github.io` redirect there. The custom domain is set in the repo's Pages settings, not with a `CNAME` file: Pages ignores one when deploying from an Actions workflow. DNS is in Cloudflare, with records set to DNS only (no proxy) so GitHub can issue the HTTPS certificate. Canonical, RSS and sitemap URLs all come from `site` in `astro.config.mjs`.
+
 ```sh
 npm ci                 # install
 npm run dev            # dev server at http://localhost:4321 (shows drafts)

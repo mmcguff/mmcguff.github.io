@@ -48,6 +48,6 @@ describe('RSS autodiscovery', () => {
 
   it.each(pages)('%s advertises the feed', (page) => {
     const href = loadDist(page)('link[rel="alternate"][type="application/rss+xml"]').attr('href');
-    expect(href).toMatch(/\/rss\.xml$/);
+    expect(href).toBe(`${SITE}/rss.xml`);
   });
 });

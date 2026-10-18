@@ -6,7 +6,7 @@ import { parse as parseYaml } from 'yaml';
 export const ROOT = path.resolve(import.meta.dirname, '..');
 export const DIST = path.join(ROOT, 'dist');
 export const BLOG_DIR = path.join(ROOT, 'src/content/blog');
-export const SITE = 'https://mmcguff.github.io';
+export const SITE = 'https://devguff.com';
 export const GA4_ID = 'G-4W1771HBN9';
 
 /** Read a built file from dist/, failing with a clear message if the site was never built. */

@@ -42,6 +42,16 @@ describe('readme authoring guide', () => {
   it('gives the local preview command', () => {
     expect(readme()).toContain('npm run dev');
   });
+
+  // #24: the custom domain and where it is configured.
+  it('says the site is served at devguff.com', () => {
+    expect(readme()).toContain('https://devguff.com');
+  });
+
+  it('explains the domain lives in the Pages settings, not a CNAME file', () => {
+    expect(readme()).toMatch(/CNAME/);
+    expect(readme()).toMatch(/Cloudflare/);
+  });
 });
 
 describe('.gitignore', () => {
