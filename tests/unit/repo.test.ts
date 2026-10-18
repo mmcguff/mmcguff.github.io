@@ -43,6 +43,11 @@ describe('readme authoring guide', () => {
     expect(readme()).toContain('npm run dev');
   });
 
+  // #29 AC6
+  it('gives the type check command', () => {
+    expect(readme()).toContain('npm run check');
+  });
+
   // #24: the custom domain and where it is configured.
   it('says the site is served at devguff.com', () => {
     expect(readme()).toContain('https://devguff.com');

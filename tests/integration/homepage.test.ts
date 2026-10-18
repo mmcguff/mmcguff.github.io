@@ -34,6 +34,29 @@ describe('homepage (dist/index.html)', () => {
     expect($('form[action^="https://formspree.io/f/"]').length).toBe(1);
   });
 
+  // #29 AC5: the recruiter video iframe uses only standard attributes.
+  describe('Loom video iframe', () => {
+    const iframe = () => loadDist('index.html')('iframe[src*="loom.com/embed"]');
+
+    it('keeps the same video', () => {
+      expect(iframe().attr('src')).toBe(
+        'https://www.loom.com/embed/38cc3ddc20e94c44a9c0ad2c974982a2?sid=b605b47c-0c88-43e5-a697-a52fba04f1a1',
+      );
+    });
+
+    it('allows fullscreen', () => {
+      expect(iframe().is('[allowfullscreen]')).toBe(true);
+    });
+
+    it.each(['webkitallowfullscreen', 'mozallowfullscreen', 'frameborder'])('has no %s attribute', (attr) => {
+      expect(iframe().attr(attr)).toBeUndefined();
+    });
+
+    it('has no border', () => {
+      expect(iframe().attr('style')).toMatch(/border:\s*0/);
+    });
+  });
+
   // AC3: resume and static assets still resolve.
   it('links to the resume PDF', () => {
     const $ = loadDist('index.html');
