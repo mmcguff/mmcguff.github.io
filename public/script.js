@@ -33,6 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Bulma's navbar is CSS-only: open and close the mobile menu from the burger button
+  function setMenu($burger, open) {
+    const $menu = document.getElementById($burger.dataset.target);
+    $burger.classList.toggle('is-active', open);
+    $menu.classList.toggle('is-active', open);
+    $burger.setAttribute('aria-expanded', String(open));
+  }
+
+  (document.querySelectorAll('.navbar-burger') || []).forEach(($burger) => {
+    $burger.addEventListener('click', () => {
+      setMenu($burger, !$burger.classList.contains('is-active'));
+    });
+
+    // Close the menu once a link in it is used (in-page links don't reload the page)
+    (document.querySelectorAll(`#${$burger.dataset.target} a`) || []).forEach(($link) => {
+      $link.addEventListener('click', () => {
+        setMenu($burger, false);
+      });
+    });
+  });
+
   // Add a keyboard event to close all modals
   document.addEventListener('keydown', (event) => {
     if (event.code === 'Escape') {
