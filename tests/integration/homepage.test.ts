@@ -99,4 +99,29 @@ describe('homepage (dist/index.html)', () => {
     const $ = loadDist('index.html');
     expect($('.navbar a.navbar-item[href="/blog/"]').text()).toMatch(/blog/i);
   });
+
+  // #42 AC5: the mobile menu toggle is a real, labelled button wired to the menu.
+  describe('mobile menu button', () => {
+    const burger = () => loadDist('index.html')('.navbar .navbar-burger');
+
+    it('is a single <button type="button">', () => {
+      expect(burger().length).toBe(1);
+      expect(burger().is('button')).toBe(true);
+      expect(burger().attr('type')).toBe('button');
+    });
+
+    it('has an accessible label', () => {
+      expect(burger().attr('aria-label')?.trim()).toBeTruthy();
+    });
+
+    it('controls the nav menu', () => {
+      expect(burger().attr('aria-controls')).toBe('navbarMenuHeroA');
+      expect(burger().attr('data-target')).toBe('navbarMenuHeroA');
+      expect(loadDist('index.html')('#navbarMenuHeroA.navbar-menu').length).toBe(1);
+    });
+
+    it('starts collapsed', () => {
+      expect(burger().attr('aria-expanded')).toBe('false');
+    });
+  });
 });
