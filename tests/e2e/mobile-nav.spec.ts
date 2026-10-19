@@ -5,6 +5,27 @@ const burger = (page: Page) => page.locator('.navbar .navbar-burger');
 const menu = (page: Page) => page.locator('#navbarMenuHeroA');
 const navLink = (page: Page, name: RegExp) => menu(page).locator('a.navbar-item', { hasText: name });
 
+/** WCAG contrast ratio between an element's colour (text, or a child's fill) and the first solid background behind it. */
+async function contrast(page: Page, selector: string, colorOf: 'self' | 'firstChildBackground' = 'self') {
+  return page.locator(selector).first().evaluate((el, colorOf) => {
+    const rgb = (c: string) => (c.match(/[\d.]+/g) ?? []).map(Number);
+    const lum = ([r, g, b]: number[]) => {
+      const [R, G, B] = [r, g, b].map((v) => (v /= 255) <= 0.03928 ? v / 12.92 : ((v + 0.055) / 1.055) ** 2.4);
+      return 0.2126 * R + 0.7152 * G + 0.0722 * B;
+    };
+    const fg = colorOf === 'self' ? getComputedStyle(el).color : getComputedStyle(el.firstElementChild!).backgroundColor;
+    let node: Element | null = el;
+    let bg = 'rgb(255, 255, 255)';
+    for (; node; node = node.parentElement) {
+      const c = getComputedStyle(node).backgroundColor;
+      // Skip transparent and translucent layers (e.g. a 10% highlight) to reach the solid colour underneath.
+      if (rgb(c)[3] === undefined) { bg = c; break; }
+    }
+    const [a, b] = [lum(rgb(fg)), lum(rgb(bg))].sort((x, y) => y - x);
+    return (a + 0.05) / (b + 0.05);
+  }, colorOf);
+}
+
 test.describe('mobile (375px)', () => {
   test.use({ viewport: { width: 375, height: 812 } });
 
@@ -59,6 +80,19 @@ test.describe('mobile (375px)', () => {
     await expect(navLink(page, /blog/i)).toBeVisible();
     await page.keyboard.press('Space');
     await expect(navLink(page, /blog/i)).toBeHidden();
+  });
+
+  // AC1: readable, not just present. WCAG AA: 4.5:1 for text, 3:1 for the icon.
+  test('open menu links are readable against the menu background', async ({ page }) => {
+    await burger(page).click();
+    for (const name of ['Experience', 'About', 'Testimonials', 'Blog']) {
+      const ratio = await contrast(page, `#navbarMenuHeroA a.navbar-item:text-is("${name}")`);
+      expect(ratio, `${name} link contrast`).toBeGreaterThanOrEqual(4.5);
+    }
+  });
+
+  test('the menu icon stands out against the hero', async ({ page }) => {
+    expect(await contrast(page, '.navbar .navbar-burger', 'firstChildBackground')).toBeGreaterThanOrEqual(3);
   });
 
   // AC9

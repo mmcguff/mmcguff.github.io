@@ -13,6 +13,21 @@
     border-radius: 5%;
 }
 
+/* Below Bulma's desktop breakpoint the menu drops down over the page: give the white links a dark backdrop */
+.hero .navbar-burger {
+    color: white;
+}
+
+@media screen and (max-width: 1023px) {
+    .hero .navbar-menu {
+        background-color: #363636;
+    }
+
+    .hero .navbar-menu .navbar-item.is-active {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
 .fa-tint{
     color: #6EC5E3;
 }
