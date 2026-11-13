@@ -1,0 +1,202 @@
+/*
+ * Light/dark theme for the whole site. Loaded after Bulma 0.9.4 (CSS-only, no built-in dark mode).
+ * <html data-theme="light|dark"> is set before first paint by THEME_INIT_SCRIPT (src/lib/theme.ts).
+ *
+ * Palette (all text pairs are >= 4.5:1, checked by tests/e2e/theme.spec.ts):
+ *   dark:  page #121212, surface #1e1e1e, raised #2a2a2a, text #e6e6e6, headings #f5f5f5, link #8ab4ff
+ */
+
+:root {
+  color-scheme: light;
+}
+
+/* ---------- Fixes that apply to both themes: Bulma defaults below AA contrast ---------- */
+
+.hero-image {
+  background-color: #636363;
+}
+
+.button.is-info,
+.button.is-primary,
+.button.is-success {
+  color: #fff;
+}
+.button.is-info {
+  background-color: #2563a8;
+}
+.button.is-info:hover {
+  background-color: #1f5594;
+}
+.button.is-primary {
+  background-color: #00796b;
+}
+.button.is-primary:hover {
+  background-color: #00665a;
+}
+.button.is-success {
+  background-color: #1b7f4b;
+}
+.button.is-success:hover {
+  background-color: #166a3f;
+}
+
+.help.is-success {
+  color: #1b7f4b;
+}
+.help.is-danger {
+  color: #c4122f;
+}
+
+.theme-toggle + .navbar-burger {
+  margin-left: 0;
+}
+
+/* ---------- Code blocks: Shiki dual-theme variables ---------- */
+
+.astro-code,
+.astro-code span {
+  color: var(--shiki-light) !important;
+}
+.astro-code {
+  background-color: var(--shiki-light-bg) !important;
+  /* The block background matches the page, so the border is what sets it apart. */
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+}
+
+html[data-theme='dark'] .astro-code,
+html[data-theme='dark'] .astro-code span {
+  color: var(--shiki-dark) !important;
+}
+html[data-theme='dark'] .astro-code {
+  background-color: var(--shiki-dark-bg) !important;
+  border-color: #30363d;
+}
+
+/* ---------- Dark theme ---------- */
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+  background-color: #121212;
+}
+
+html[data-theme='dark'] body {
+  color: #e6e6e6;
+}
+
+html[data-theme='dark'] .hero-image {
+  background-color: #1c1c1c;
+}
+
+html[data-theme='dark'] .title,
+html[data-theme='dark'] .subtitle,
+html[data-theme='dark'] strong,
+html[data-theme='dark'] .content h1,
+html[data-theme='dark'] .content h2,
+html[data-theme='dark'] .content h3,
+html[data-theme='dark'] .content h4,
+html[data-theme='dark'] .content h5,
+html[data-theme='dark'] .content h6,
+html[data-theme='dark'] .modal-card-title {
+  color: #f5f5f5;
+}
+
+html[data-theme='dark'] a:not(.button):not(.navbar-item) {
+  color: #8ab4ff;
+}
+html[data-theme='dark'] a:not(.button):not(.navbar-item):hover {
+  color: #b3ceff;
+}
+/* Bulma underlines links in notifications and uses the surrounding text colour: keep that. */
+html[data-theme='dark'] .notification a:not(.button) {
+  color: currentColor;
+}
+
+html[data-theme='dark'] hr {
+  background-color: #333;
+}
+
+html[data-theme='dark'] .box,
+html[data-theme='dark'] .notification {
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+  box-shadow: 0 0 0 1px #333;
+}
+
+/* The post callout (<aside class="notification is-info is-light">) is a pale box by default. */
+html[data-theme='dark'] .notification.is-info.is-light {
+  background-color: #16222e;
+  color: #9ccbf0;
+  box-shadow: 0 0 0 1px #24415c;
+}
+
+html[data-theme='dark'] .content blockquote {
+  background-color: #2a2a2a;
+  border-left-color: #555;
+}
+
+html[data-theme='dark'] code {
+  background-color: #2a2a2a;
+  color: #ff9fb0;
+}
+html[data-theme='dark'] pre code {
+  background-color: transparent;
+  color: inherit;
+}
+
+html[data-theme='dark'] .tag:not(body):not(.is-warning) {
+  background-color: #2a2a2a;
+  color: #e6e6e6;
+}
+
+html[data-theme='dark'] .help.is-success {
+  color: #6fdc9d;
+}
+html[data-theme='dark'] .help.is-danger {
+  color: #ff8a9b;
+}
+
+/* Forms */
+html[data-theme='dark'] .input,
+html[data-theme='dark'] .textarea,
+html[data-theme='dark'] .select select {
+  background-color: #1e1e1e;
+  border-color: #666;
+  color: #e6e6e6;
+}
+html[data-theme='dark'] .input:focus,
+html[data-theme='dark'] .textarea:focus,
+html[data-theme='dark'] .select select:focus {
+  border-color: #8ab4ff;
+}
+html[data-theme='dark'] .input::placeholder,
+html[data-theme='dark'] .textarea::placeholder {
+  color: #a3a3a3;
+}
+html[data-theme='dark'] .select:not(.is-multiple):not(.is-loading)::after {
+  border-color: #8ab4ff;
+}
+html[data-theme='dark'] .control.has-icons-left .icon,
+html[data-theme='dark'] .control.has-icons-right .icon {
+  color: #a3a3a3;
+}
+
+/* Modal (recruiter video) */
+html[data-theme='dark'] .modal-card-head,
+html[data-theme='dark'] .modal-card-foot {
+  background-color: #2a2a2a;
+  border-color: #444;
+}
+html[data-theme='dark'] .modal-card-body {
+  background-color: #1e1e1e;
+  color: #e6e6e6;
+}
+
+/* Logos are dark-on-transparent: give them a light plate so they stay visible. */
+html[data-theme='dark'] .level-item img,
+html[data-theme='dark'] .notification img,
+html[data-theme='dark'] .media-left img:not(.is-rounded) {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.35rem;
+}
