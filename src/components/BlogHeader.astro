@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -15,6 +17,7 @@ const { title, subtitle } = Astro.props;
           <a class="navbar-item" href="/"><b>💻 Matthew McGuff</b></a>
           <a class="navbar-item" href="/blog/">Blog</a>
           <a class="navbar-item" href="/rss.xml" aria-label="RSS feed">RSS</a>
+          <ThemeToggle />
         </div>
       </div>
     </nav>
